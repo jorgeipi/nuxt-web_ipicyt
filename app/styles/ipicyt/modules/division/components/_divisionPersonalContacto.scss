@@ -1,0 +1,80 @@
+@use '@styles/base/variables' as v;
+@use '@styles/base/mixins' as m;
+
+.divcontacto-personal {
+    display: inline-flex;
+    flex-direction: column;
+    max-width: 270px;
+    width: 100%;
+
+    &:hover {
+        .divcontacto--foto {
+            filter: brightness(0.8);
+        }
+
+        .divcontacto-content {
+            .divcontacto-nombre {
+                cursor: pointer;
+            }
+        }
+    }
+
+    .divcontacto--foto {
+        border-radius: 50%;
+        margin-bottom: 2rem;
+        width: 181px;
+        height: 181px;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+    }
+
+    .divcontacto-content {
+        .divcontacto-nombre {
+            color: v.$strong-blue3;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 22px;
+            /* 122.222% */
+            text-decoration-line: underline;
+            text-decoration-style: solid;
+            text-decoration-skip-ink: auto;
+            text-decoration-thickness: auto;
+            text-underline-offset: auto;
+            text-underline-position: from-font;
+
+        }
+
+        .divcontacto-info {
+            margin-top: 2rem;
+            p {
+                color: v.$black;
+                font-size: 15px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 22px;
+            }
+
+            .divcontacto-email {
+                .email {
+                    color: #2453F7;
+                    font-size: 15px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 22px;
+                }
+            }
+        }
+    }
+}

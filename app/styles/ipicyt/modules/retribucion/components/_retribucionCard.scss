@@ -1,0 +1,75 @@
+@use '@styles/base/variables' as v;
+@use '@styles/base/mixins' as m;
+
+.retribucion--card {
+  width: min(100%, 28.7rem);
+  display: flex;
+  flex-direction: column;
+  min-height: 41.8rem;
+
+  background-color: #EFEFEF;
+  transition: filter 0.3s ease;
+
+  &:hover {
+    cursor: pointer;
+
+    .retribucion--card_info {
+      text-decoration: underline;
+    }
+
+    .retribucion--card_img {
+      filter: brightness(0.9);
+    }
+  }
+
+  &:focus-visible {
+    outline: 2px solid v.$strong-blue3;
+    outline-offset: 4px;
+  }
+
+  .retribucion--card_img {
+    width: 100%;
+    height: 19.3rem;
+    flex-shrink: 0;
+
+    .img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .retribucion--card_content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2rem;
+
+    .retribucion--card_boxinfo {
+      margin-bottom: 2.7rem;
+
+      .retribucion--card_title {
+        color: v.$strong-blue3;
+        font-size: 2.2rem;
+        font-weight: 700;
+        line-height: 2.8rem;
+
+        @include m.mobile {
+          font-size: 1.8rem;
+          line-height: 2.4rem;
+        }
+      }
+
+      .retribucion--card_info {
+        @include m.mobile {
+          font-size: 1.5rem;
+          line-height: 2rem;
+        }
+      }
+    }
+
+    .retribucion--card_icon {
+    }
+  }
+}

@@ -1,0 +1,344 @@
+@use '@styles/base/variables' as v;
+@use '@styles/base/mixins' as m;
+
+.division--itemApoyo, .division--itemArticuloDivulgacion{
+    padding-bottom: 2.5rem;
+    border-bottom: 1px solid v.$normal-gray;
+    margin-bottom: 3rem;
+
+    &:last-of-type{
+        margin-bottom: 0rem;
+    }
+    
+    .content{
+        font-family: v.$primaryFont;
+        font-size: 1.4rem;
+        font-style: normal;
+        line-height: 2rem;
+        margin: 0rem;
+    }
+
+    .division--title{
+        .title{
+            color: v.$black;
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+        }
+    }
+
+    .division--datosAutores{
+        .info{
+            margin-bottom: 0.8rem;
+        }
+    }
+
+    .division--info{
+        .info{
+            color: v.$black;
+            font-weight: 400;
+        }
+    }
+
+    .division--intermedio{
+        margin-top: 3rem;
+    }
+
+    .division--autor{
+        margin-top: 3rem;
+        .title{
+            color: v.$black;
+            font-weight: 700;
+        }
+
+        .autor-box{
+            display: inline-flex;
+            flex-direction: column;
+            .autor{
+                color: v.$strong-blue3;
+                font-weight: 400;
+    
+                &:hover{
+                    cursor: pointer;
+                    text-decoration: underline;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+}
+
+
+.division--itemArticulo{
+    padding-bottom: 2.5rem;
+    border-bottom: 1px solid v.$normal-gray;
+    margin-bottom: 3rem;
+
+    &:last-of-type{
+        margin-bottom: 0rem;
+    }
+    
+    .content{
+        font-family: v.$primaryFont;
+        font-size: 1.4rem;
+        font-style: normal;
+        line-height: 2rem;
+        margin: 0rem;
+    }
+
+    .division--title{
+        .title{
+            color: v.$black;
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+        }
+    }
+
+    .division--datosAutores{
+        .info{
+            margin-bottom: 0.8rem;
+        }
+    }
+
+    .division--info{
+        .info{
+            color: v.$black;
+            font-weight: 400;
+        }
+    }
+
+    .division--intermedio{
+        margin-top: 3rem;
+    }
+
+    .division--autor{
+        margin-top: 3rem;
+        .title{
+            color: v.$black;
+            font-weight: 700;
+        }
+
+        .autor-box{
+            display: inline-flex;
+            flex-direction: column;
+            .autor{
+                color: v.$strong-blue3;
+                font-weight: 400;
+    
+                &:hover{
+                    cursor: pointer;
+                    text-decoration: underline;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+}
+
+
+
+.division--articuloCorto{
+    .articuloCorto--title{
+        color: v.$strong-blue3;
+        font-family: v.$primaryFont;
+        font-size: 1.4rem;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 2.2rem;
+        letter-spacing: -0.014rem;
+        margin-top: 0rem;
+
+        margin-bottom: 2rem;
+    }
+
+    .articuloCorto--articulo{
+        padding-bottom: 2.5rem;
+        border-bottom: 1px solid v.$normal-gray;
+        margin-bottom: 3rem;
+    
+        .content{
+            font-family: v.$primaryFont;
+            font-size: 1.4rem;
+            font-style: normal;
+            line-height: 2rem;
+            margin: 0rem;
+        }
+    
+        .articulo--title{
+            .title{
+                color: v.$black;
+                font-weight: 700;
+                margin-bottom: 0.8rem;
+            }
+        }
+    
+        .articulo--info{
+            .info{
+                color: v.$black;
+                font-weight: 400;
+            }
+        }
+    
+        .articulo--revista{
+            .revista{
+                margin-top: 3rem;
+                color: v.$black;
+                font-weight: 400;
+            }
+        }
+    }
+
+    .text-notfound{
+        text-align: center;
+        color: v.$gray;
+        font-weight: 600;
+        margin-bottom: 3rem;
+    }
+}
+
+
+.division--capituloLibro{
+    padding-bottom: 2.5rem;
+    border-bottom: 1px solid v.$normal-gray;
+    margin-bottom: 3rem;
+
+    &:last-of-type{
+        margin-bottom: 0rem;
+    }
+
+    .content{
+        font-family: v.$primaryFont;
+        font-size: 1.4rem;
+        font-style: normal;
+        line-height: 2rem;
+        margin: 0rem;
+    }
+
+    .capituloLibro--titulocapitulo{
+        .title{
+            color: v.$black;
+            font-weight: 700;
+        }
+    }
+
+    .capituloLibro--titulo{
+        .title{
+            color: v.$black;
+            font-weight:normal;
+            margin-bottom: 1.5rem;
+        }
+    }
+
+    .capituloLibro--autores{
+        .autores{
+            margin-bottom: 1.5rem;
+        }
+    }
+
+    .capituloLibro--editorial{
+        .editorial{
+            margin-bottom: 1.5rem;
+        }
+    }
+
+    .capituloLibro--informacion{
+        .informacion{
+
+        }
+    }
+}
+
+.division--libro{
+    padding-bottom: 2.5rem;
+    border-bottom: 1px solid v.$normal-gray;
+    margin-bottom: 3rem;
+
+    &:last-of-type{
+        margin-bottom: 0rem;
+    }
+
+    .content{
+        font-family: v.$primaryFont;
+        font-size: 1.4rem;
+        font-style: normal;
+        line-height: 2rem;
+        margin: 0rem;
+    }
+
+    .libro--titulo{
+        .title{
+            color: v.$black;
+            font-weight: 700;
+        }
+    }
+
+    .libro--autores{
+        .autores{
+
+        }
+    }
+    
+    .libro--informacion{
+        .informacion{
+            margin-top: 3rem;
+        }
+    }
+}
+
+
+
+.division--memoria{
+    padding-bottom: 2.5rem;
+    border-bottom: 1px solid v.$normal-gray;
+    margin-bottom: 3rem;
+
+    &:last-of-type{
+        margin-bottom: 0rem;
+    }
+
+    .content{
+        font-family: v.$primaryFont;
+        font-size: 1.4rem;
+        font-style: normal;
+        line-height: 2rem;
+        margin: 0rem;
+    }
+
+    .memoria--titulo{
+        .title{
+            color: v.$black;
+        }
+    }
+
+    .memoria--autores{
+        .autores{
+
+        }
+    }
+
+    .memoria--informacion{
+        margin-top: 2rem;
+        .informacion{
+
+        }
+    }
+
+    .memoria--autoresipicyt{
+        margin-top: 2rem;
+
+        .title{
+            color: v.$black;
+        }   
+
+        .autor{
+            color: v.$strong-blue3;
+            font-weight: 400;
+            // transition: all 0.3s;
+
+            &:hover{
+                cursor: pointer;
+                text-decoration: underline;
+                font-weight: bold;
+            }
+        }
+    }
+}

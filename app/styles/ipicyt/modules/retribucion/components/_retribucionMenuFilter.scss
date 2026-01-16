@@ -1,0 +1,14 @@
+@use '@styles/base/variables' as v;
+@use '@styles/base/mixins' as m;
+
+.retribucion--filter_menu{
+    display: flex;
+    align-items: row;
+    gap: 1rem;
+    margin-bottom: 3rem;
+
+    @include m.mobile{
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}

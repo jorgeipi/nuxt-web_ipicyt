@@ -1,0 +1,73 @@
+@use '@styles/base/variables' as v;
+@use '@styles/base/mixins' as m;
+
+.curricular{
+    width: 100% !important;
+    .principalInfoContainer{
+        .infoDiv{
+            max-width: 585px;
+            display: flex;
+            align-items: center;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid black;
+            img{
+                width: 147px;
+                height: 147px;
+                border-radius: 50%;
+                -webkit-border-radius: 50%;
+                -moz-border-radius: 50%;
+                -ms-border-radius: 50%;
+                -o-border-radius: 50%;
+                object-fit: cover;
+            }
+            .infoPersonal{
+                margin-left: 3rem;
+                h4{
+                    color: black;
+                    margin-bottom: 1rem;
+                }
+                p,a{
+                    font-size: 1.5rem;
+                    margin: 0%;
+                }
+                @include m.mobile{
+                    margin-left: 0%;
+                }
+            }
+            @include m.mobile{
+                flex-direction: column;
+                align-items: start;
+                row-gap: 2rem;
+            }
+        }
+    }
+
+    .infoData{
+        width: 620px;
+        margin-top: 20px;
+        display: flex;
+        margin-bottom: 100px;
+        @include m.mobile{
+            max-width: 310px;
+            p{
+                max-width: 310px;
+            }
+
+        }
+        li{
+            margin-bottom: 3rem;
+            font-size: 1.4rem;
+        }
+        h3{
+            margin-bottom: 3rem;
+            color: #2453F7;
+        }
+        h5{
+            color: black;
+            margin-bottom: 2rem;
+        }
+        ul{
+            margin-left: 2rem;
+        }
+    }
+}

@@ -1,0 +1,74 @@
+@use '@styles/base/variables' as v;
+@use '@styles/base/mixins' as m;
+
+@mixin textBtn($bg-color) {
+    //* Display - Flex y Grid
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    // width: 100%;
+
+    //* Fuentes
+    font-weight: v.$regular;
+    font-size: 1.4rem;
+    text-transform: capitalize;
+    color: v.$white;
+    text-align: center;
+
+    //* Espacios
+    padding: 0.7rem 1.5rem;
+
+    //* Background y Border
+    background-color: $bg-color;
+    border-radius: 0.5rem;
+    border: 0.1rem solid transparent;
+
+    //* Sombras
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+
+    //* Transiciones
+    transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.2s ease-in-out;
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    &:active {
+        background-color: adjust($bg-color,10%);
+    }
+
+    &:disabled {
+        background-color: v.$gray;
+        cursor: not-allowed;
+        border-color: v.$gray;
+        pointer-events: none;
+    }
+}
+
+.ipi-textBtn--primary {
+    @include textBtn(v.$strong-blue);
+}
+
+
+.comunicacion-social__button {
+    border-radius: 10rem;
+    background: v.$strong-blue3;
+    border: none;
+    color: v.$white;
+    padding: 0.7rem 6.9rem;
+
+    text-align: center;
+    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: v.$bold;
+    line-height: 2.2rem; /* 157.143% */
+
+    &:hover{
+        cursor: pointer;
+        background-color: #1b4388;
+    }
+
+    &:active{
+        background-color: #2453f7;
+    }
+}

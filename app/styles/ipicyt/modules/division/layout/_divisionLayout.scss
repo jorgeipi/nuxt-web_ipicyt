@@ -1,0 +1,44 @@
+@use '@styles/base/variables' as v;
+@use '@styles/base/mixins' as m;
+
+.divisionLayout {
+    margin-bottom: 10rem;
+
+
+    .divisionLayout--boxmain {
+         position: relative;
+        .divisionLayout--main {
+            display: flex;
+            flex-direction: row;
+           
+            min-height: 100vh;
+
+            @include m.desktop {
+                flex-direction: column;
+            }
+
+            @include m.mobile {
+                padding-top: 4.8rem;
+            }
+
+            .divisionLayout--boxMenu {
+                margin-right: 11.1rem;
+
+                position: sticky;
+                z-index: 996;
+                top: 0;
+
+                @include m.desktop {
+                    display: flex;
+                    justify-content: space-between;
+                    margin-right: 0;
+                }
+
+                &.slice {
+
+                }
+            }
+        }
+    }
+
+}

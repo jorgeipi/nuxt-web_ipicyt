@@ -1,0 +1,91 @@
+@use '@styles/base/variables' as v;
+@use '@styles/base/mixins' as m;
+
+
+.banner--card {
+
+  max-width: 27.6rem;
+  width: 100%;
+  min-height: 386px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  background-color: #EFEFEF;
+  transition: filter 0.3s ease;
+
+  @include m.tablet{
+    max-width: 311px;
+  }
+
+  &:hover {
+    cursor: pointer;
+
+    .banner--card_info {
+      text-decoration: underline;
+    }
+
+    .banner--card_img {
+      filter: brightness(0.9);
+    }
+  }
+
+  &:focus-visible {
+    outline: 2px solid v.$strong-blue3;
+    outline-offset: 4px;
+  }
+
+  .banner--card_img {
+    width: 100%;
+    height: 12.7rem;
+    flex-shrink: 0;
+
+    .img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .banner--card_content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2rem;
+
+
+    .banner--card_boxinfo {
+      margin-bottom: 2.7rem;
+
+      .banner--card_title {
+        color: #0E149B;
+        font-size: 2.2rem;
+        font-weight: 700;
+        line-height: 2.8rem;
+
+        @include m.mobile {
+          font-size: 2.2rem;
+        }
+      }
+
+      .banner--card_info {
+        color: #0E149B;
+        @include m.mobile {
+
+        }
+      }
+    }
+
+    .banner--card_icon {
+      display: flex;
+      justify-content: end;
+      align-items: center;
+
+      .icon {
+        width: 2.2rem;
+        height: 2.2rem;
+      }
+    }
+  }
+}

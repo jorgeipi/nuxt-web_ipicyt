@@ -1,0 +1,56 @@
+@use '@styles/base/variables' as v;
+@use '@styles/base/mixins' as m;
+.saludOcupacional{
+    margin-bottom: 10rem;
+    max-width: 609px;
+    h2{
+        font-size: 2.1rem;
+    }
+    h5{
+        font-size: 2.2rem;
+        color: #2453f7;
+    }
+    .content{
+    h2,h5{
+        padding: 2rem 0 2rem 0;
+    }
+    }
+    ul{
+        padding-top: 1rem;
+        padding-left: 2rem;
+    }
+    li{
+        font-size: 1.4rem;
+        font-weight: bold;
+    }
+    a{
+        color: black;
+    }
+    p{
+        padding-bottom: 2rem;
+    }
+    .cont_intro{
+        display: flex;
+        padding-bottom: 2rem;
+        @include m.mobile{
+        flex-direction: column;
+        }
+        .intro_desc{
+            padding-left: 2rem;
+            h2{
+                margin-bottom: 2rem;
+            }
+            img{
+                margin-bottom: 3rem;
+            }
+            @include m.mobile{
+                padding-left: 0%;
+            }
+        }
+    }
+    @include m.mobile{
+        img{
+            max-width: 310px;
+        }
+    }
+}

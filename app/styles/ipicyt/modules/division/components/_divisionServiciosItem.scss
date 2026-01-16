@@ -1,0 +1,77 @@
+@use '@styles/base/variables' as v;
+@use '@styles/base/mixins' as m;
+
+
+.servicios--item {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+
+    margin-top: 6rem;
+
+    &:last-of-type {
+        margin-bottom: 6rem;
+    }
+
+    @include m.tablet {
+        flex-direction: column;
+    }
+
+
+    .servicios--itemIcon {
+
+        margin-right: 3rem;
+
+        .servicios--icon {
+            &.DGA {
+                color: v.$dga;
+            }
+
+            &.DBM {
+                color: v.$dbm;
+            }
+
+            &.DCA {
+                color: v.$dca;
+            }
+
+            &.DCSD {
+                color: v.$dcsd;
+            }
+
+            &.DMA {
+                color: v.$dma;
+            }
+        }
+    }
+
+    .servicios--itemContent {
+        .servicios--itemTitle {
+            color: v.$black;
+            font-family: "Noto Sans";
+            font-size: 15px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 28px;
+        }
+
+        .servicios--itemText {
+            color: v.$black;
+            font-family: "Noto Sans";
+            font-size: 15px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 22px;
+
+            ul {
+                padding-left: 100px !important;
+                padding-right: 100px !important;
+
+                @include m.tablet{
+                    padding-left: 20px !important;
+                    padding-right: 0px !important;
+                }
+            }
+        }
+    }
+}

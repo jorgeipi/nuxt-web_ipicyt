@@ -1,0 +1,92 @@
+@use '@styles/base/variables' as v;
+@use '@styles/base/mixins' as m;
+.comunidad-por-el-mundo{
+    margin-bottom: 10rem;
+    .notas-content{
+        width: auto;
+        margin-top: 4rem;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        column-gap: 3rem;
+        row-gap: 3rem;
+        @media(max-width:1200px){
+            grid-template-columns: repeat(3, 1fr);
+        }
+        @media(max-width:768px){
+            grid-template-columns: repeat(2, 1fr);
+        }
+        @media(max-width:480px){
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+    .notas{
+        max-width: 182px;
+        min-height: 387px;
+        @media(max-width:480px){
+            max-width: 100%;
+            min-height: 100%
+        }
+
+        img{
+            display: block;
+            width: 182px;
+            height: 141px;
+            @media(max-width:480px){
+                padding: 1rem 0rem 0 1rem;
+            }
+
+        }
+        .infoNota{
+            height: 245px;
+            padding: 1.2rem;
+            background-color: #EBEBEB;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            @media(max-width:480px){
+                height: auto;
+            }
+            .content{
+                height: 100%;
+                .descripcion{
+                    padding: 0%;
+                    font-size: 1.3rem;
+                }
+                h4{
+                    font-size: 1.5rem;
+                    color: #A6802D;
+                }
+            }
+            .footer{
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                p{
+                    padding: 0%;
+                }
+                .date{
+                    font-size: 1.3rem;
+                    color: #455179;
+                }
+                img{
+                    height: 2.2rem;
+                    width: 2.2rem;
+                }
+            }
+        }
+        @include m.mobile{
+            background-color: #EBEBEB;
+            flex-direction: column;
+            height: auto;
+        }
+    }
+    .notas:hover{
+        .descripcion{
+            text-decoration: underline;
+        }
+        img{
+            filter: brightness(0.8);
+            -webkit-filter: brightness(0.8);
+        }  
+    }
+}

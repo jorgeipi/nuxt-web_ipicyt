@@ -1,0 +1,43 @@
+@use '@styles/base/variables' as v;
+@use '@styles/base/mixins' as m;
+
+.division--buttonFill {
+    width: fit-content;
+    height: 100%;
+    
+    padding: 1rem 2.1rem;
+    border: 1px solid v.$strong-blue3;
+    background-color: v.$strong-blue3;
+
+    color: v.$white;
+    font-size: 1.1rem;
+    font-style: normal;
+    text-align: center;
+    font-weight: 600;
+    line-height: 1rem;
+
+    border-radius: 50px;
+    
+    transition: all 0.3s ease;
+
+    &:hover {
+        cursor: pointer;
+        color: v.$white;
+        background-color: v.$black;
+        border: 1px solid v.$black;
+    }
+
+    &.active {
+        color: v.$white;
+        background-color: v.$black;
+        border: 1px solid v.$black;
+    }
+
+    .text {
+        color: #FFF;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 22px; /* 157.143% */
+    }
+}

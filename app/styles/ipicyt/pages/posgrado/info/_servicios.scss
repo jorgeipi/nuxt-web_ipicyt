@@ -1,0 +1,112 @@
+@use '@styles/base/variables' as v;
+@use '@styles/base/mixins' as m;
+
+.servicios{
+    width: 609px;
+    display: flex;
+    flex-direction: column;
+    .cont-serv{
+        width: 100%;
+        display: flex;
+        .it{
+            width: 580px;
+            height: 50px;
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;            
+            border: 2px solid v.$strong-blue;
+            img{
+                margin-left: 20px;
+                margin-right: 20px;
+            }
+            h4{
+                color: v.$black;
+                font-weight: 400;
+                font-size: 18px;
+            }
+        }
+        a:hover{
+            .it{
+                background-color: v.$strong-blue;
+            }
+        }
+    }
+    .parrafo{
+        width: 580px;
+    }
+
+    h4{
+        color: v.$black;
+        //font-size: 20px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    h5{
+        color: v.$black;
+    }
+    section{
+        padding-left: 20px;
+    }
+}
+
+.m-titulo{
+    text-align: start;
+    display: flex;
+    align-items: center; /* Alinea verticalmente el ícono y el texto */
+    justify-content: space-between; /* Asegura que el título y el ícono estén en los extremos opuestos */
+    h1{
+        color: v.$strong-blue;
+        font-size: 20px;
+        font-weight: 700;
+    }
+    i{
+        color: v.$black;
+        font-size: 50px;
+        font-weight: 200;
+        margin-left: auto;
+    }
+}
+.m-content{
+    padding-bottom: 25px;
+    border-bottom: 2px solid v.$strong-blue;
+    .acord-text{
+        padding-top: 1.25rem /* 20px */;
+        padding-bottom: 1.25rem /* 20px */;
+        width: 100%;
+    }
+}
+
+
+@media(max-width:780px){
+    .servicios_res{
+        flex-direction: column;
+    }
+    .servicios{
+        margin-left: 30px;
+        width: auto;
+    }
+}
+
+@media(max-width:450px){
+    .servicios{
+        max-width: 300px;
+        margin-left: 0;
+        .it{
+            height: 100px!important;
+        }
+    }
+    .it,.parrafo{
+        max-width: 280px!important;
+    }
+    .it{
+        h4{
+            font-size: 12px;
+        }
+    }
+}
+
+@media(max-width:860px){
+    .it,.parrafo{
+        max-width: 400px;
+    }
+}

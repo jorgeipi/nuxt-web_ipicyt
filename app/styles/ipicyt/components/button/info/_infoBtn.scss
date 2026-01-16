@@ -1,0 +1,124 @@
+@use '@styles/base/variables' as v;
+@use '@styles/base/mixins' as m;
+
+.ipi-infoBtn {
+    //* Display
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    //* Tamaños
+    // max-width: 26.9rem;
+    width:100%;
+    height: 7.2rem;
+
+    //* Espacios
+    padding: 1.4rem 2.6rem;
+
+    //* Border
+    border-radius: 1rem;
+
+    //* Background
+    background-color: #abafbd;
+
+    //* Transiciones
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+        cursor: pointer;
+        background-color: v.$strong-blue2;
+    }
+
+    &:active {
+        background-color: adjust(v.$strong-blue2, -10%);
+    }
+
+    @include m.mobile{
+        flex-direction: column;
+        min-height: 7.2rem;
+        height: auto;
+    }
+
+    .title {
+        color: v.$white;
+        font-size: 1.7rem;
+        font-weight: v.$bold;
+        line-height: 2.2rem;
+        margin: 0;
+        text-align: center;
+    }
+
+    .title--multi-line {
+        font-size: 1.2rem;
+        line-height: 1.7rem;
+    }
+
+}
+
+
+
+.ipi-infoBtn__img{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    place-items: center;
+    padding: 1rem;
+
+    background-color: #abafbd;
+    max-width: 26.9rem;
+    width: 100%;
+    height: 7.2rem;
+
+    border-radius: 1rem;
+
+    .box-img {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 1rem;
+
+        img {
+            width: 11rem;
+            height: 5rem;
+            object-fit: contain;
+        }
+    }
+
+    .box-list {
+        .list-disc {
+            padding: 0;
+            list-style-type: disc;
+            color: v.$white;
+            margin: 0;
+            margin-left: calc(v.$separacion / 2);
+            margin-bottom: 0;
+
+            li {
+                line-height: 0;
+                p {
+                    color: v.$white;
+                    font-weight: bold;
+                    text-transform: uppercase;
+                    font-size: 9px;
+                    line-height: 9px;
+                    margin: 0;
+                }
+            }
+        }
+    }
+
+    &:hover {
+        cursor: pointer;
+        background-color: v.$strong-blue2;
+    }
+
+    &:active {
+        background-color: adjust(v.$strong-blue2, -10%);
+    }
+
+    @include m.mobile{
+        grid-template-columns: repeat(1, 1fr);
+        min-height: 7.2rem;
+        height: auto;
+    }
+}

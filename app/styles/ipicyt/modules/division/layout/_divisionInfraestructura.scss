@@ -1,0 +1,132 @@
+@use '@styles/base/variables' as v;
+@use '@styles/base/mixins' as m;
+
+.division--infraes{
+    .infraes--main{
+        width: 58.5rem;
+        @include m.desktop{
+            margin: 0 auto;
+        }
+        @include m.tablet{
+            width: min(58.5rem, 100%);
+        }
+
+        .infraes--intro{
+            .infraes--articulo{
+                .infraes--image{
+                    aspect-ratio: 58.5 / 29.3;
+                    height: 29.3rem;
+                    width: min(58.5rem, 100%);
+                    margin-bottom: 1.3rem;
+                    position: relative;
+                    z-index: 10;
+                    display: flex;
+
+                    &:hover{
+                        cursor: pointer;
+                    }
+
+                    @include m.tablet{
+                        aspect-ratio: 58.5 / 29.3;
+                        width: 100%;
+                        height: auto;
+                    }
+
+                    @include m.mobile{
+                        width: 100%;
+                        height: 182px;
+                    }
+
+                    .image{
+                        object-fit: cover;
+                        width: 100%;
+                        height: 100%;
+                    }
+                    .division--icon{
+                        height: 3.1rem;
+                        width: 3.1rem;
+                        background-color: v.$white;
+                        position: absolute;
+                        bottom: 1rem;
+                        right: 1rem;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        padding: 0;
+                        
+                        .icon{
+                
+                        }
+                    }
+                }
+                
+                .infraes--content{
+                    .content{
+                        color: v.$black;
+                        font-family: v.$primaryFont;
+                        font-size: 1.5rem;
+                        font-style: normal;
+                        font-weight: 400;
+                        line-height: 2.2rem;
+                        margin: 0rem;
+
+                        &.negritas{
+                            font-weight: 700;
+                        }
+
+                    }
+
+                    .ubicacion, .contacto, .lideres {
+                        .content{
+                            margin-bottom: 0.3rem;
+                            &:last-of-type{
+                                margin-bottom: 0rem;
+                            }
+                        }
+                    }
+                    .ubicacion, .lideres{
+                        margin-top: 3rem;
+                    }
+                    
+                    .lideres {
+                        .lideres--list{
+                            display: inline-flex;
+                            flex-direction: column;
+                            .lider{
+                                color: v.$strong-blue3;
+                                list-style: none;
+                                font-size: 1.5rem;
+                                font-style: normal;
+                                font-weight: 400;
+                                line-height: 2.2rem;
+            
+                                display: inline-block;
+            
+                                &:hover{
+                                    cursor: pointer;
+                                    text-decoration: underline;
+                                    font-weight: 700;
+                                }
+                            }
+                        }
+                    }
+
+                    .contacto{
+                        padding: 0rem;
+                        margin-bottom: 3rem;
+                    }
+                }
+            }
+
+        }
+
+        .infraes--equipos{
+            margin-top: 3rem;
+            .infraes--list{
+                @include m.mobile{
+
+                }
+            }
+        }
+    }
+}

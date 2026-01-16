@@ -1,0 +1,199 @@
+@use '@styles/base/variables' as v;
+@use '@styles/base/mixins' as m;
+
+
+// .icon {
+//     display: inline-block;
+//     font-size: 1.5rem; /* Tamaño del ícono */
+//     transition: transform 0.5s ease;
+//     cursor: pointer; /* Indica que es clickeable */
+// }
+
+.rotatedLeft {
+    transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+}
+
+.rotatedRigth {
+    transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+}
+/* Para personalizar la transición */
+.transition-transform {
+    transition: transform 0.5s ease; /* Animación de la transformación */
+}
+
+.duration-500 {
+    transition-duration: 0.5s; /* Duración de la transición */
+}
+
+.resalte{
+    font-size: 15px;
+    font-weight: 500;
+    color: #2453f7;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.hidden{
+    display: none!important;
+}
+
+.box-menu{
+    display: flex;
+    width: auto;
+    margin-right: calc(v.$separacion / 2);
+    .hamburguesa-button .icon {
+        color: var(--dynamicColor);
+    }
+    @include m.tablet{
+        width: 100%;
+    }
+    .hamburguesa-button{
+        display: none;
+        position: sticky;
+        z-index: 996;
+        top: 0rem;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 10px;
+        font-size: 3rem;
+        transition: transform 0.3s ease-in-out;
+        -webkit-transition: transform 0.3s ease-in-out;
+        -moz-transition: transform 0.3s ease-in-out;
+        -ms-transition: transform 0.3s ease-in-out;
+        -o-transition: transform 0.3s ease-in-out;
+        @include m.tablet
+        {
+            display: block;
+        }
+    }
+    .hamburguesa-button.open{
+        transition: transform 0.3s ease-in-out;
+        transform: translateX(525%);
+        -webkit-transform: translateX(525%);
+        -moz-transform: translateX(525%);
+        -ms-transform: translateX(525%);
+        -o-transform: translateX(525%);
+        -webkit-transition: transform 0.3s ease-in-out;
+        -moz-transition: transform 0.3s ease-in-out;
+        -ms-transition: transform 0.3s ease-in-out;
+        -o-transition: transform 0.3s ease-in-out;
+        background-color: #D9D9D9;
+    }
+    .stick_ham{
+        position: fixed;
+    }
+}
+
+
+.weight-bold{
+    font-weight: 700;
+}
+.itemP{
+    @include m.mobile{
+        max-width: 280px;
+    }
+}
+.bold{
+    font-weight: bold;
+}
+.correo_contactos{
+    display: flex;
+    flex-direction: row;
+    margin-top: 2rem;
+    align-items: flex-end;
+    p{
+        margin-top: 0rem !important;
+        margin-bottom: 0rem !important;
+    }
+    img{
+        margin-right: 2rem;
+        width: 3rem;
+        height: 3rem;
+    }
+}
+.btnContainer{
+    display: flex;
+    flex-direction: column; /* Coloca los elementos en columna */
+    gap: 1rem; /* Espaciado vertical entre los botones */
+    align-items: flex-start; /* Alinea los botones al inicio (izquierda) */
+}
+.list_item{
+    border-top: 0.1rem solid hsl(0, 0%, 0%);
+    padding-bottom: 2rem;
+    h5,h4,h3{
+        padding-top: 2.5rem;
+    }
+    .box_list{
+        display: flex;
+        .content_list{
+            height: 100%;
+        }
+        .icon_list{
+            padding-top: 2.5rem;
+            padding-right: 2rem;
+            height: 100%;
+        }
+    }
+}
+
+
+.displayCenter{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 300px; /* o el alto que necesites */
+  font-size: 1.2rem;
+  color: #555;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #ddd;
+  border-top-color: #3498db; /* color del spinner */
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 10px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@media only screen and (max-width: 768px) {
+    .menu-container .menu-btn {
+        left: 190px;
+    }
+}
+
+.sec-content-res{
+    display: flex;
+    margin-top: 80px;
+    margin-bottom: 80px;
+}
+
+
+@media (max-width: 780px) {
+    .sec-content-res {
+        flex-direction: column;
+    }
+    .menu_hamburguesa_sticky{
+        display: block;
+    }
+}

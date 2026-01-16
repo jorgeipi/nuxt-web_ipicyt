@@ -1,0 +1,131 @@
+@use '@styles/base/variables' as v;
+@use '@styles/base/mixins' as m;
+
+@mixin text-styleCS($color, $font-size, $font-weight, $line-height) {
+    color: $color;
+    font-size: $font-size;
+    font-style: normal;
+    font-weight: $font-weight;
+    line-height: $line-height;
+}
+
+.comunicacion-social {
+    max-width: 81rem;
+    display: flex;
+    flex-direction: column;
+  
+    &__header {
+      display: flex;
+      min-height: 27.6rem;
+      margin-bottom: 1.8rem;
+
+      gap: 2.4rem;
+
+      @include m.tablet {
+        flex-direction: column;
+        min-height: 0;
+
+        & .comunicacion-social__info{
+          &-text{
+            .comunicacion-social__info-title{
+              font-size: 1.9rem!important;
+            }
+
+            .comunicacion-social__info-paragraph{
+              font-size: 1.5rem!important;
+            }
+          }
+        }
+      }
+  
+      & .comunicacion-social__info {
+        flex-grow: 1;
+        flex-basis: 0;
+  
+        &-text {
+          margin-bottom: 3rem;
+  
+          .comunicacion-social__info-title {
+            @include text-styleCS(#000, 2.1rem, 700, 2.2rem);
+            margin: 0;
+            margin-bottom: 2rem;
+          }
+  
+          .comunicacion-social__info-paragraph {
+            @include text-styleCS(#000, 1.5rem, 400, 2.2rem);
+            margin: 0;
+          }
+        }
+      }
+    }
+  
+    &__list {
+      margin-bottom: 7.2rem;
+
+      @include m.mobile {
+        margin-bottom: 2rem;
+
+        .comunicacion-social__list-title{
+          font-size: 1.5rem!important;
+          line-height: 1.5rem!important;
+          margin-bottom: 0.5rem!important;
+        }
+
+        .comunicacion-social__list-email{
+          font-size: 1.2rem!important;
+          line-height: 1.2rem!important;
+          text-wrap: wrap!important;
+        }
+      }
+  
+      &-item {
+        min-height: 11.5rem;
+        display: flex;
+        align-items: center;
+        border-bottom: 0.1rem solid v.$black;
+  
+        &:first-of-type {
+          border-top: 0.1rem solid v.$black;
+        }
+  
+        .box-item {
+          display: flex;
+          flex-direction: row;
+          min-height: 6.6rem;
+  
+          .comunicacion-social__list-header {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+  
+            .comunicacion-social__list-email {
+              @include text-styleCS(#2453f7, 1.4rem, v.$light-bold, 2.2rem);
+              margin: 0;
+              margin-top: 1rem
+            }
+  
+            .comunicacion-social__list-title {
+              @include text-styleCS(v.$black, 2.1rem, 700, 2.2rem);
+              margin: 0;
+            }
+          }
+  
+          .comunicacion-social__list-icon {
+            width: 2.5rem;
+            height: 100%;
+            flex-shrink: 0;
+            margin-right: 1.7rem;
+  
+            .img {
+              background-repeat: no-repeat;
+              background-size: cover;
+              background-position: center;
+            }
+          }
+        }
+      }
+    }
+}
+
+

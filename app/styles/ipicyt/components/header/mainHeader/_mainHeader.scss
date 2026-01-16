@@ -1,0 +1,65 @@
+@use '@styles/base/variables' as v;
+@use '@styles/base/mixins' as m;
+
+.ipi-nav-header {
+    //* Display - Flexbox y Grid
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    width: 100%;
+    row-gap: 20px;
+
+    // position: relative;
+    // z-index: 999;
+
+    .ipi-section-logos {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: row;
+    }
+
+    .ipi-section-search {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: row;
+
+        .link__menu {
+            margin-right: 2.5rem;
+
+            &::before,
+            &::after {
+                background-color: #E3C79E;
+            }
+
+            .link {
+                color: #E3C79E
+            }
+        }
+    }
+
+    .ipi-section-links {
+        width: 100%;
+    }
+
+    .ipi-box-search {
+        .search-input .location-search {
+            max-width: 171px;
+            max-height: 25px;
+        }
+
+        .search-input .button-search {
+            max-height: 25px;
+        }
+    }
+
+    &.ipi-hidden-header {
+        @include m.desktop {
+            //* Display - Flexbox y Grid
+            display: none;
+        }
+    }
+}

@@ -1,0 +1,47 @@
+
+@use '@styles/base/mixins' as m;
+.diplomados{
+    max-width: 609px;
+    h3{
+        color: black;
+    }
+    .diplomados_intro{
+        display: grid;
+        row-gap: 2rem;
+        .diplomados_oferta{
+            display: flex;
+            column-gap: 2rem;
+            row-gap: 2rem;
+            justify-content: space-around;
+            align-items: center;
+            padding: 2rem;
+            width: 100%;
+            min-height: 93px;
+            background-color: #EEEDED;
+            border-radius: 10px;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            -ms-border-radius: 10px;
+            -o-border-radius: 10px;
+            @include m.mobile{
+                flex-direction: column;
+            }
+        }
+    }
+    .ofertas{
+        margin: 5rem 0 5rem 0;
+        .oferta_Container{
+            margin: 3rem 0 5rem 0;
+            .oferta{
+                border-top: 1px solid black;
+                padding: 1rem 0 1rem 0;
+                display: flex;
+                align-items: center;
+                column-gap: 3rem;
+            }
+        }
+    }
+    .border-bottom{
+        border-bottom: 1px solid black;
+    }
+}

@@ -1,0 +1,93 @@
+@use '@styles/base/variables' as v;
+@use '@styles/base/mixins' as m;
+
+.ipi-banner {
+  width: 100%;
+  height: 276px;
+  position: relative;
+  overflow: hidden;
+
+  aspect-ratio: 16/9;
+  max-height: none;
+
+  &:hover {
+    cursor: pointer;
+
+    .img {
+      filter: brightness(0.9);
+    }
+
+    .banner-news_content {
+      .banner-news_text {
+        .title {
+          text-decoration: underline;
+        }
+
+        .description {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  .img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .banner-news_content {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    bottom: 0;
+    width: 100%;
+    min-height: 9.2rem;
+    padding: 2rem;
+
+    display: grid;
+    grid-template-columns: auto 1fr;
+
+
+    .banner-news_text {
+            display: flex;
+      align-items: start;
+      justify-content: center;
+      flex-direction: column;
+      .title {
+        color: v.$white;
+        font-size: 2.2rem;
+        font-weight: 700;
+        margin: 0rem !important;
+      }
+
+      .description {
+        color: v.$white;
+        font-size: 1.5rem;
+        font-weight: 400;
+        margin-top: 0.5rem;
+      }
+    }
+
+    .banner-news_button {
+      display: flex;
+      align-items: center;
+      justify-content: end;
+      background-color: transparent;
+      border: none;
+      border-radius: 50%;
+
+      .icon {
+        width: 3.7rem;
+        height: 3.7rem;
+        flex-shrink: 0;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  @include m.mobile {}
+}

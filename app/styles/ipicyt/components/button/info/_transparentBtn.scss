@@ -1,0 +1,67 @@
+@use '@styles/base/variables' as v;
+@use '@styles/base/mixins' as m;
+
+.ipi-transparentBtn {
+    // Dimensiones y estructura
+    min-height: 5.8rem;
+    width: min(311px, 100%);
+    padding: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    // Estilos visuales
+    background: rgba(0, 0, 0, 0.4);
+    border: 0.1rem solid #fff;
+    border-radius: 1rem;
+    transition: all 0.2s ease-in-out;
+
+    // Pseudo-clases
+    &:hover {
+        cursor: pointer;
+        background-color: rgba(0, 0, 0, 0.7);
+    }
+
+    &:active {
+        background-color: adjust(v.$strong-blue, 0%);
+    }
+
+    @include m.desktop{
+        min-height: 4.8rem;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+        // font-size: 2.9rem;
+        width: min(311px, 100%);
+    }
+
+    @include m.mobile {
+        min-height: 3.8rem;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+        // font-size: 1.3rem;
+        width: min(180px, 100%);
+    }
+
+    .ipi-transparentBtn-text {
+        margin: 0;
+        padding: 0;
+
+        // Tipografía
+        font-size: 2.9rem;
+        font-weight: v.$light;
+        font-style: normal;
+        line-height: normal;
+        text-align: center;
+        color: v.$white;
+
+        // Media queries
+        @include m.tablet {
+            font-size: 2.4rem;
+        }
+
+        @include m.mobile {
+            font-size: 1.8rem;
+        }
+    }
+}

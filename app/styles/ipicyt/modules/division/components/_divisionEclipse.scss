@@ -1,0 +1,62 @@
+@use '@styles/base/variables' as v;
+@use '@styles/base/mixins' as m;
+
+.inicio--posgrado {
+    max-width: 28.4rem;
+    min-height: 8.5rem;
+    height: 100%;
+    background-color: #EDEDED;
+    border-radius: 0.8rem;
+    flex-shrink: 0;
+
+    padding: 0.932rem 1.6rem;
+    display: flex;
+    align-items: center;
+    gap: 1.56rem;
+
+    transition: all 0.3s;
+
+    &:hover{
+        cursor: pointer;
+        background-color: #E0E0E0;
+    }
+
+    @include m.tablet{
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .inicio--boxeclipse {
+        height: 5.832rem;
+        width: 5.832rem;
+        flex-shrink: 0;
+
+        .eclipse--division{
+            width: 6rem;
+            height: 6rem;
+        
+            .eclipse--icon{
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+
+    .inicio--title {
+        flex-grow: 1;
+        
+        .title {
+            color: v.$black;
+            font-family: v.$primaryFont;
+            font-size: 1.5rem;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            margin: 0;
+
+            .negritas{
+                font-weight: 700;
+            }
+        }
+    }
+}

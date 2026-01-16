@@ -1,0 +1,26 @@
+@use '@styles/base/variables' as v;
+@use '@styles/base/mixins' as m;
+
+.curricularLayout{
+
+    .box-curricular{
+        margin-bottom: v.$separacion;
+        display: flex;
+        flex-direction: row;
+        justify-content: start;
+        position: relative;
+
+        @include m.tablet{
+            justify-content: start;
+            align-items: start;
+            flex-direction: column;
+        }
+        .box-info{
+            width: 100%;
+            min-height: 100vh;
+        }
+    }
+    .box-menu{
+        margin-right: 3rem;
+    }
+}

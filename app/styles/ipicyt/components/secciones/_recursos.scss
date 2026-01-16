@@ -1,0 +1,69 @@
+@use '@styles/base/variables' as v;
+@use '@styles/base/mixins' as m;
+
+.recursos{
+    //* Tamaños
+    min-height: 19.3rem;
+    width: 100%;
+
+    //* Background
+    background-color: rgb(235, 235, 235);
+
+    //* Posicionamiento
+    position: relative;
+
+    //* Espacios
+    margin-bottom: 4rem;
+    margin-top: 4rem;
+    padding-left: 10rem;
+    padding-right: 10rem;
+
+    //* Bordes
+    border-radius: 1.5rem;
+
+    //* Display - Flexbox y Grid
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+
+    h2{
+        //* Fuentes
+        color: v.$black;
+        font-weight: v.$medium;
+
+        //* Espacios
+        margin-top: 0rem;
+
+        span{
+            //* Fuentes
+            font-weight: v.$bold;
+        }
+    }
+
+    @include m.mobile{
+        padding: 1rem;
+    }
+
+    &::before {
+        content: '';
+
+        //* Tamaños
+        height: 5px;
+        width: 128px;
+
+        // * Posicionamiento
+        position: absolute;
+        top: 0;
+
+        //* Background
+        background-color: v.$strong-blue2;
+    }
+
+    .primary-button{
+        //* Fuentes
+        a{
+            font-size: 23px;
+        }
+    }
+}

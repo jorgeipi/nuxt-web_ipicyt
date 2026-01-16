@@ -1,0 +1,41 @@
+@use '@styles/base/mixins' as m;
+@use '@styles/base/variables' as v;
+
+.bienvenida {
+    display: flex;
+    column-gap: 1.8rem;
+
+    @include m.tablet {
+        flex-direction: column;
+    }
+
+    h3,
+    h4 {
+        padding: 2rem 0rem 2rem 0rem;
+    }
+
+    .contenido {
+        max-width: 609px;
+
+        h3 {
+            color: black;
+        }
+
+        .parrafo {
+            margin-bottom: 3.7rem;
+        }
+    }
+
+    .bienvenida--director{
+        display: flex;
+        flex-direction: column;
+
+        .bienvenida--personal{
+            margin-bottom: 2rem;
+
+            @include m.tablet{
+                // border-bottom: 1px solid black;
+            }
+        }
+    }
+}

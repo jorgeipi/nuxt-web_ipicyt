@@ -1,0 +1,42 @@
+@use '@styles/base/variables' as v;
+@use '@styles/base/mixins' as m;
+
+.becas{
+   max-width: 609px;
+    .p-top{
+        margin-bottom: 1rem /* 16px */;
+    }
+    ol, li{
+        color: v.$black;
+        font-size: 15px;
+    }
+    p{
+        font-weight: 400;
+    }
+    h4{
+        margin-top: 2.5rem /* 40px */;
+        margin-bottom: 1rem /* 16px */;
+        font-weight: 700;
+        font-size: 22px;
+        color: v.$black;
+        line-height: 28px;
+    }
+    .li-decimal{
+        list-style-type: decimal;
+        margin-left: 1.5rem /* 24px */;
+        margin-bottom: 1rem /* 16px */;
+        margin-top: 40px;
+        li{
+            margin-top: 20px;
+        }
+    }
+    .li-disc{
+        list-style-type: disc;
+        margin-left: 1.5rem /* 24px */;
+        margin-bottom: 1rem /* 16px */;
+        margin-top: 40px;
+        li{
+            margin-top: 20px;
+        }
+    }
+}

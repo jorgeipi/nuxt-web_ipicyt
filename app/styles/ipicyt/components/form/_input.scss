@@ -1,0 +1,107 @@
+@use '@styles/base/variables' as v;
+@use '@styles/base/mixins' as m;
+
+.search-input {
+    //* Posicionamiento
+    position: relative;
+
+    .location-search {
+        //* Tamaños
+        height: 2.5rem;
+        width: 100%;
+
+        //* Background
+        background-color: v.$white;
+
+        //* Bordes
+        border-width: 2px;
+        border-color: transparent;
+        border-style: solid;
+
+        //* Espacios
+        padding-left: 10px;
+        padding-right: 40px;
+
+        font-size: 1.2rem;
+
+        &:focus {
+            //* Bordes
+            border-top-color: v.$brown;
+            border-left-color: v.$brown;
+            border-bottom-color: v.$brown;
+
+            //* Otros
+            outline: none;
+        }
+
+        &::-webkit-search-cancel-button,
+        &::-webkit-search-decoration,
+        &::-webkit-search-results-button,
+        &::-webkit-search-results-decoration {
+            display: none;
+        }
+
+        &::placeholder{
+            font-size: 1.2rem;
+        }
+    }
+
+    .button-search {
+        //* Posicionamiento
+        position: absolute;
+        right: 0;
+        top: 0;
+
+        //* Tamaños
+        height: 2.5rem;
+        width: 39px;
+
+        //* Fuentes
+        color: v.$white;
+
+        //* Bordes
+        border-style: solid;
+
+        //* Background
+        background-color: v.$brown;
+        border-color: v.$brown;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        &:active {
+            background-color: adjust(v.$brown,10%);
+        }
+    }
+
+    .icon{
+        width: 1.4rem;
+        height: 1.4rem;
+    }
+}
+
+.search-inputRes {
+    //* Tamaños
+    width: 100%;
+    height: v.$inputRes-height;
+
+    //* Espacios
+    padding: 10px;
+    margin: 0px;
+
+    //* Bordes
+    border: none;
+    outline: none;
+    border: solid 5px #D9D9D9;
+}
+
+.search-inputRes::placeholder {
+    color: black;
+    font-size: 1.5rem;
+    font-weight: 500;
+}

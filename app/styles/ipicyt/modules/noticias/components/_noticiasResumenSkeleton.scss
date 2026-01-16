@@ -1,0 +1,88 @@
+@use '@styles/base/variables' as v;
+@use '@styles/base/mixins' as m;
+
+.noticia--inicio {
+    .noticias--resumen{
+        &.noticias--resumen--skeleton{
+            max-width: 69.9rem;
+            width: 69.9rem;
+            flex-shrink: 0;
+
+            .noticia--box{
+                .noticia--main{
+                    .noticia--titulo{
+                        background-color: transparent;
+                        padding: 0rem;
+                        height: 5rem;
+                        margin-top: 0.5rem;
+                    }
+                    
+                    .noticia--info{
+                        padding: 0rem;
+                        .noticia--fecha{
+                            width: 20%;
+                            margin-bottom: 2rem;
+                            .fecha{
+                                
+                            }
+                        }
+                        
+                        .noticia--resumen{
+                            height: 7rem;
+                            .resumen{
+                            }
+                        }
+                    }
+                
+                    &:hover{
+                        cursor:auto;
+                    }
+        
+                }
+            }
+        }
+
+        .noticia--img{
+
+            .img{
+            }
+        }
+    }
+
+
+
+    @include m.tablet{
+        .noticias--resumen{
+            &.noticias--resumen--skeleton{
+                max-width: 22.4rem;
+                width: 22.4rem;
+                flex-shrink: 0;
+                box-shadow: none;
+    
+                &:hover {
+                    transform: none;
+                    box-shadow: none;
+                }
+            
+                .noticia--box{
+                
+                    .noticia--main{
+                        .noticia--titulo{
+                            .titulo{
+                            }
+                        }
+    
+                            
+                        .noticia--info{
+                            .resumen{
+                            }
+                        }
+    
+                        .noticia--link{ 
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

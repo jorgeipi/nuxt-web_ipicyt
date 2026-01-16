@@ -1,0 +1,95 @@
+@use '@styles/base/variables' as v;
+@use '@styles/base/mixins' as m;
+
+.top-bg-image {
+    //* Espacios
+    margin-bottom: calc(v.$separacion * 2);
+
+    //* Tamaños
+    width: 100%;
+    height: 23rem;
+
+    //* Display - Flexbox y Grid
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    //* Background
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    // width: 100%;
+    // height: 100%;
+
+    h1{
+        text-align: center;
+        color: v.$white;
+    }
+}
+
+.top-bg-image-eclipse{
+    //* Espacios
+    margin-bottom: calc(v.$separacion);
+
+    //* Tamaños
+    width: 100%;
+    height: 23rem;
+
+    //* Background
+    background-size: cover;
+    background-position: center;
+
+    //* Display - Flexbox y Grid
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .box-topImage{
+        //* Display - Flexbox y Grid
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @include m.mobile{
+            flex-direction: column;
+        }
+
+        .box-title{
+            margin-left: calc(v.$separacion);
+            display: flex;
+            flex-direction: column;
+
+            h2{
+                font-size: 2.0rem;
+                font-weight: v.$light;
+                color: white;
+                transition: all 0.3s ease;
+                margin-top: 1rem;
+                i{
+                    font-weight: 40;
+                    font-size: 2.7rem;
+                }
+                @include m.mobile{
+                    font-size: calc(1.5rem + 1vw);
+                }
+            }
+
+            h1{
+                font-size: 3.1rem;
+                font-weight: 600;
+                margin-top: 0rem;
+                margin-bottom: 0%;
+                transition: all 0.3s ease;
+                @include m.mobile{
+                    margin: 0rem;
+                    font-size: calc(2.2rem);
+                }
+            }
+
+            @include m.mobile{
+                text-align: center;
+            }
+
+        }
+    }
+}

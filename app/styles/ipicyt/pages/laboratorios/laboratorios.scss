@@ -1,0 +1,84 @@
+@use '@styles/base/variables' as v;
+@use '@styles/base/mixins' as m;
+.laboratorio{
+    display: block;
+    padding:2rem;
+    max-width: 790px;
+
+    margin-bottom: 6rem;
+    @include m.mobile{
+        padding: 0%;
+    }
+    h3{
+        color: black;
+        padding: 2rem 0 2rem 0;
+    }
+    h4{
+        color: #2453F7;
+        font-size: 2.2rem;
+        line-height: 28px;
+        padding: 1.5rem 0 1.5rem 0;
+    }
+    .contactoItem,.text-persona{
+        p{
+            padding: 0%;
+        }
+    }
+    .contactoItem{
+        margin: 0;
+    }
+    .parrafo{
+        padding: 1.5rem 0 1rem 0;
+        line-height: 24px;
+    }
+    .servicios{
+        border-bottom: 1px solid black;
+    }
+    .introSeccion{
+        display: flex;
+        margin-bottom: 5rem;
+        @include m.tablet{
+            flex-direction: column;
+        }
+        .introInfo{
+            padding-left: 3rem;
+            max-width: 582px;
+            display: grid;
+            p{
+                padding: 1rem 0 1rem 0;
+            }
+            img{
+                margin-bottom: 3rem;
+            }
+            .portal{
+                text-decoration: underline;
+            }
+            .btn_portal{
+                img{
+                    margin: 0;
+                }
+            }
+            @include m.mobile{
+                padding-left: 0%;
+                padding-top: 2rem;
+                img{
+                    max-width: 300px;
+                }
+            }
+        }
+    }
+    .borderbottom{
+        border-bottom: 1px solid black;
+        padding-bottom: 2rem;
+    }
+
+    .laboratorio_contacto{
+        margin-top: 4.5rem;
+
+        display: flex;
+        flex-direction: column;
+
+        gap: 4.5rem
+    }
+
+}

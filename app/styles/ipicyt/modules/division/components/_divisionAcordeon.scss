@@ -1,0 +1,66 @@
+@use '@styles/base/variables' as v;
+@use '@styles/base/mixins' as m;
+
+.division--acordeon {
+    .descripcion {}
+
+    .lineas {
+        padding: 0rem;
+        margin-top: 3rem;
+
+        .lineas--title {
+            list-style: disc;
+            color: v.$black;
+            font-size: 1.5rem;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 2.2rem;
+        }
+
+        .lineas--personal-list {
+            padding: 0rem;
+            padding-left: 1rem;
+            display: inline-flex;
+            flex-direction: column;
+
+            .li-personal {
+                list-style-type: none;
+                padding: 0rem;
+
+                .personal {
+                    color: v.$strong-blue3;
+                    list-style: none;
+                    font-size: 1.5rem;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 2.2rem;
+
+                    display: inline-block;
+
+                    &:hover {
+                        cursor: pointer;
+                        text-decoration: underline;
+                        font-weight: 700;
+                    }
+                }
+            }
+        }
+
+
+        .lineas--descripcion {}
+
+        .lineas--asociados {
+            .lineas--asociados-title {
+                color: v.$black;
+
+                font-size: 1.5rem;
+                font-style: normal;
+                font-weight: 700;
+                line-height: 2.2rem;
+                margin: 0rem;
+                margin-top: 1.2rem;
+                margin-bottom: 1.2rem;
+            }
+        }
+    }
+}

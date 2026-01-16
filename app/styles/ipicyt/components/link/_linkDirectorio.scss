@@ -1,0 +1,23 @@
+@use '@styles/base/variables' as v;
+@use '@styles/base/mixins' as m;
+
+.directorio__link {
+    display: inline-block;
+
+    .link__title {
+        font-size: 1.5rem;
+        font-weight: v.$medium;
+        line-height: 2.8rem;
+        color: v.$black;
+
+        position: relative;
+        &::before {
+            content: "";
+            height: 0.1rem;
+            width: 100%;
+            position: absolute;
+            bottom: -10px;
+            background-color: v.$strong-blue3;
+        }
+    }
+}

@@ -1,0 +1,302 @@
+@use '@styles/base/variables' as v;
+@use '@styles/base/mixins' as m;
+
+.title-bg{
+    //* Espacios
+    padding-top: 40px;
+    padding-bottom: 40px;
+
+    //* Display - Flexbox y Grid
+    display: flex;
+    align-items: center;
+    .eclipse{
+        //* Tamaños
+        height: 100px;
+        width: 100px;
+
+        //* Bordes
+        border-radius: 50%;
+
+        //* Display - Flexbox y Grid
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0; 
+
+        //* Posicionamiento
+        position: relative;
+        .vineta{
+            //* Tamaños
+            height: 38px;
+            width: 38px;
+            background-color: v.$white;
+            background-size: cover;
+            background-position: center;
+            //* Bordes
+            border-radius: 50%;
+            //* Posicionamiento
+            position: absolute;
+            top: 0;
+            right: 0;
+
+            img {
+                //* Tamaños
+                width: 100%;
+                height: 100%;
+            } 
+        }
+    
+        p {
+            //* Fuentes
+            font-size: 24px;
+            font-weight: bolder;
+        }
+    }
+
+    .text-t{
+        //* Espacios
+        margin-left: 10px;
+        width: auto;
+        h3 {
+            //* Fuentes
+            font-family: "Montserrat", sans-serif;
+            font-weight: 600;
+            font-size: 45px;
+            text-transform: none;
+            text-align: start;
+            color: v.$white;
+        }
+        h2{
+            font-size: 20px;
+            color: v.$white;
+            font-weight: 400;
+        }
+
+    }
+}
+
+.info-programa{
+    padding-left: 10rem;
+    grid-auto-flow: column;
+    margin-bottom: 20rem;
+
+    .hidden{
+        display: none!important;
+    }
+
+    p{
+        font-weight: v.$regular;
+        //color: v.$black;
+        padding-bottom: 1rem;
+    }
+    .bold{
+        font-weight: bold;
+        color: black;
+    }
+    .li_alfabetico{
+        list-style:none;
+        padding-left: 2rem;
+    }
+
+
+    .title{
+        scroll-margin-top: 21.25rem;
+        display: inline-block;
+        font-size: 2.2rem;
+        font-weight: v.$bold;
+        color: v.$black;
+        margin: 0rem;
+        margin-bottom: calc(v.$separacion / 2);
+        padding-top: calc(v.$separacion / 2);
+        @include m.mobile{
+            scroll-margin-top: 15.25rem;
+        }
+    }
+    .subtitle-blue, .subtitle-black{
+        font-size: 1.5rem;
+        font-weight: v.$bold;
+    }
+    .subtitle-black-big{
+        font-size: 2.2rem;
+        font-weight: v.$bold;
+        color: v.$black;
+    }
+    .subtitle-blue{
+        color: v.$strong-blue3;
+    }
+    .subtitle-black{
+        color: v.$black;
+    }
+    
+    .info-section{
+        .box-title{
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+            i{
+                font-size: 35px;
+                font-weight: 100;
+            }
+        }
+        .box-icon-title{
+            display: flex;
+            align-items: center;
+            padding-bottom: 3rem;
+            .icon-conteiner{
+                margin-right: 2rem;
+            }
+        }
+        position: relative;
+        /*&::before {
+            content: '';
+    
+            //* Tamaños 
+            height: 0.05rem;
+            width: 100%;
+    
+            //* Posicionamiento
+            position: absolute;
+            top: 0;
+    
+            //* Background
+            background-color: lightgray;
+        } */
+    }
+    h2{
+        padding-top: 2rem;
+    }
+    .plan{
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        margin-top: 2.4rem;
+        column-gap: 2rem;
+        row-gap: 2rem;
+        .semestre_title{
+            font-size: 2.2rem;
+            color: black;
+            padding-bottom: 2rem;
+        }
+        .cont{
+            ul{
+                .optativa{
+                    text-decoration: none;
+                    cursor: inherit;
+                }
+                li{
+                    list-style: none;
+                    margin-top: 1.5rem;
+                    max-width: 18rem;
+                    font-weight: 400;
+                    font-size: 1.5rem;
+                    display: flex;
+                    color: #4C4C4C;
+                    text-decoration: underline;
+                    cursor: pointer;
+                    img{
+                        height: 15px;
+                        width: 15px;
+                        margin-right: 5px;
+                        margin-top: 2px;
+                    }
+                }
+                li:not(.optativa):hover {
+                    color: black;
+                    font-weight: 400;
+                }
+            }
+        }
+    }
+
+
+    .perfil, .aspirante, .admision,.investigacion{
+        margin-top: 2.4rem;
+        h5{
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+        }
+        li{
+            //max-width: 60rem;
+            font-size: 1.5rem;
+        }
+        ul{
+            list-style-type: disc;
+            margin-left: 2.4rem ;
+            margin-bottom: 1.6rem;
+            li{
+                margin-top: 3rem;
+            }
+        }
+        .res{
+            color: #2453F7;
+            font-weight: 500;
+            padding-left: 10px;
+            padding-top: 5px;
+            margin: 0%;
+        }
+        .res:hover{
+            text-decoration: underline;
+        }
+        .underline{
+            text-decoration: underline;
+            font-weight: 600;
+
+        }
+        .bold-blue{
+            color: #2453F7;
+            font-weight: 700;
+        }
+    }
+    .objetivos{
+        margin-top: 2rem;
+        ul{
+            list-style-type: disc;
+            margin-left: 2.4rem;
+            margin-bottom: 1.6rem;
+            li{
+                margin-top: 3rem;
+                //max-width: 60rem;
+                font-size: 1.5rem;
+            }
+        }
+    }
+    .proceso, .aspirante, .admision,.vinculacion{
+        margin-top: 2rem;
+        p{
+            //max-width: 60rem;
+            font-size: 1.5rem;
+        }
+    }
+
+    @include m.desktop{
+        padding-left: 10rem;
+        .plan{
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+    }
+
+    @include m.tablet {
+        margin-top: 3rem;
+        margin-left: 3rem;
+        padding-left: 3rem;
+        .plan{
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+        .bm-elipse-conteiner{
+            flex-direction: column;
+        }
+    }
+
+    @include m.mobile {
+        padding: 0rem;
+        margin: 0rem;
+        .conocatoria{
+            max-width: 280px;
+            i{
+                margin-left: 20px;
+            }
+            .conocatoria{
+                max-width: 280px;
+            }
+        }
+    }
+}

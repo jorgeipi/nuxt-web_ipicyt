@@ -1,0 +1,166 @@
+@use '@styles/base/variables' as v;
+@use '@styles/base/mixins' as m;
+
+.top-image--posgrado {
+    //* Display
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    //* Tamaños
+    width: 100%;
+    aspect-ratio: 1600 / 230;
+    min-height: 200px;
+
+    //* Posición
+    position: relative;
+
+    //* Espacios
+    margin-bottom: 4rem;
+
+    //* Otros
+    overflow: hidden;
+
+    .image {
+        width: 100%;
+        height: auto;
+        min-height: 200px;
+        position: absolute;
+        object-fit: cover;
+    }
+
+    .title {
+        margin: 0rem;
+        position: absolute;
+        text-align: center;
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        line-height: normal;
+        color: v.$white;
+        @include m.mobile {
+            font-size: 2.5rem;
+            line-height: 3rem;
+            max-width: 310px;
+        }
+    }
+}
+
+
+
+
+.top-image--program {
+    //* Display
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    //* Tamaños
+    width: 100%;
+    aspect-ratio: 1600 / 200;
+    min-height: 200px;
+
+    //* Posición
+    position: relative;
+
+    //* Espacios
+    margin-bottom: 4rem;
+
+    //* Background
+    background-size: cover;
+
+    //* Otros
+    overflow: hidden;
+
+    @include m.mobile {
+        margin-bottom: 0%;
+    }
+    .image {
+        width: 100%;
+        height: auto;
+        min-height: 200px;
+        position: absolute;
+        object-fit: cover;
+    }
+
+    .content-topImage {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem;
+        // width: 100%;
+
+        //* Display - Flexbox y Grid
+        @include m.mobile {
+            flex-direction: column;
+        }
+
+        .icon {
+            height: 70px;
+            width: 70px;
+        }
+
+        .box-title {
+            margin-left: 2.8rem;
+
+            .download-title {
+                display: flex;
+                align-items: center;
+                justify-content: start;
+                margin-top: 0.5rem;
+                cursor: pointer;
+
+                .subtitle {
+                    display: inline-block;
+                    font-size: 2rem;
+                    font-weight: v.$regular;
+                    transition: all 0.3s ease;
+                    color: v.$white;
+                    font-weight: v.$regular;
+                    margin-bottom: 0rem;
+                    margin-top: 0rem;
+                    @include m.mobile {
+                        font-size: 1.2rem;
+                    }
+                }
+
+                .icon {
+                    height: 2.85rem;
+                    width: 2.85rem;
+                    margin-right: 1rem;
+                }
+            }
+
+            .title-programas {
+                display: inline-block;
+                margin: 0rem;
+                transition: all 0.3s ease;
+                color: v.$white;
+                text-shadow: 0rem 0.4rem 0.4rem rgba(0, 0, 0, 0.25);
+                font-size: 3.1rem;
+                font-weight: v.$bold;
+                line-height: 3.779rem;
+                @include m.mobile {
+                    margin: 0rem;
+                    font-size: calc(1.4rem + 1vw);
+                    line-height: 2rem;
+                    max-width: 320px;
+                }
+            }
+            .divisiones_title{
+                font-size: 4.2rem;
+                @include m.mobile {
+                    padding: 2rem;
+                   font-size: 2.2rem;
+                }
+            }
+        }
+        .item-eclipse{
+            @include m.mobile {
+                margin-bottom: 1rem;
+            }
+        }
+    }
+}
+
+
+

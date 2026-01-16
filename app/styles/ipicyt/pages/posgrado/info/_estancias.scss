@@ -1,0 +1,43 @@
+@use '@styles/base/variables' as v;
+@use '@styles/base/mixins' as m;
+
+.estancias{
+    max-width: 587px;
+    @include m.mobile{
+        margin: 0%;
+    }
+    ol, li{
+        color: v.$black;
+    }
+    p{
+        font-weight: 400;
+        padding-bottom: 2rem;
+    }
+    h3{
+        color: v.$black;
+        font-size: 2.2rem;
+        padding-bottom: 2rem;
+    }
+    .est_academicas{
+        display: flex;
+        padding: 3rem;
+        background-color: #EBEBEB;
+        margin: 5rem 0rem 5rem 0rem;
+        @include m.mobile{
+            flex-direction: column;
+        }
+        .resalte{
+            font-weight: bold;
+            text-decoration: none;
+            cursor: inherit;
+        }
+        img{
+            width: 84px;
+            height: 84px;
+            margin-right: 2rem;
+            @include m.mobile{
+                margin-bottom: 2rem;
+            }
+        }
+    }
+}

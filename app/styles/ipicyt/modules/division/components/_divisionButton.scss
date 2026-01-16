@@ -1,0 +1,33 @@
+@use '@styles/base/variables' as v;
+@use '@styles/base/mixins' as m;
+@use "sass:color";
+
+
+.division--button {
+    min-height: 5.8rem;
+    padding: 1rem;
+
+    border: 0.1rem solid v.$strong-blue3;
+    background-color: v.$strong-blue3;
+    border-radius: 1rem;
+
+    color: v.$white;
+    font-size: 1.5rem;
+    font-style: normal;
+    text-align: center;
+    font-weight: 600;
+    line-height: 1.8rem;
+
+    &:hover {
+        cursor: pointer;
+        color: v.$white;
+        background-color: v.$black;
+        border-color: v.$black;
+    }
+
+    &.active {
+        color: v.$white;
+        background-color: color.adjust(v.$strong-blue3, $lightness: -10%);
+        border-color:color.adjust(v.$strong-blue3, $lightness: -10%);
+    }
+}

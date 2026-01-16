@@ -1,0 +1,80 @@
+@use '@styles/base/variables' as v;
+@use '@styles/base/mixins' as m;
+
+.link__menu {
+    // //* Posicionamiento
+    position: relative;
+    margin: 0rem;
+
+    // //* Fuentes
+    color: v.$white;
+    text-decoration: none;
+
+    // //* Espacios
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    // * Transicion Borde
+    &::before,
+    &::after {
+        content: "";
+
+        //* Posicionamiento
+        position: absolute;
+        bottom: 0;
+
+        //* Tamaños
+        height: 0.2rem;
+        width: 0;
+
+        //* Background
+        background-color: v.$white;
+
+        //* Transiciones
+        transition: width 0.3s;
+    }
+    &::before {
+        left: 50%;
+    }
+    &::after {
+        right: 50%;
+    }
+    &:hover::before,
+    &:hover::after {
+        width: 50%;
+    }
+
+    .link {
+        //* Fuentes
+        color: v.$white;
+        text-decoration: none;
+        font-size: 1.5rem;
+        font-weight: v.$regular;
+        text-wrap: nowrap;
+        width: 100%;
+        text-align: center;
+        @include m.desktopXL {
+            font-size: 1.3rem;
+        }
+    }
+    p{
+        margin: 0%;
+    }
+
+    .icon {
+        height: 1.5rem;
+        width: 1.5rem;
+        transition: all 0.3s ease-in-out;
+        margin-left: 0.2rem;
+    }
+
+    &:hover {
+        //*Fuentes
+        cursor: pointer;
+
+        .icon {
+            transform: rotate(-90deg);
+        }
+    }
+}

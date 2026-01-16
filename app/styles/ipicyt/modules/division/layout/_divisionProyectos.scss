@@ -1,0 +1,54 @@
+@use '@styles/base/variables' as v;
+@use '@styles/base/mixins' as m;
+
+.division--proyectos{
+    .proyectos--main{
+        width: 58.5rem;
+        @include m.desktop{
+            margin: 0 auto;
+        }
+        @include m.tablet{
+            width: min(58.5rem, 100%);
+        }
+        .proyectos--intro{
+            margin-bottom: 2.4rem;
+
+            .proyectos--instrucciones{
+                border-radius: 10px;
+                background: #EEEDED;
+                min-height: 74px;
+                flex-shrink: 0;
+                padding: 2rem;
+
+                margin-bottom: 3.2rem;
+
+                .instrucciones{
+                    color: v.$black;
+                    font-size: 1.5rem;
+                    font-style: normal;
+                    line-height: 2.2rem;
+                    letter-spacing: -.015rem;
+                }
+            }
+
+            .proyectos--menu{
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(13.35rem, 1fr));
+                gap: 1.7rem;
+                margin-bottom: 3.2rem;
+                width: 100%;
+
+                @include m.mobile{
+                    flex-direction: column;
+                }
+
+                .division--select{
+                }
+            }
+        }
+
+        .proyectos--content{
+            
+        }
+    }
+}
