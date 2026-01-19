@@ -1,10 +1,9 @@
 <!-- layers/home/pages/index.vue -->
 <script setup lang="ts">
-import { definePageMeta } from '#imports'
-import MapaSitio from '../components/mapasitio/MapaSitio.vue'
+// import { definePageMeta } from '#imports'
+// import MapaSitio from '../components/mapasitio/MapaSitio.vue'
 
 definePageMeta({
-  layout: 'default',
   title: 'Instituto Potosino de Investigación Científica y Tecnológica A.C.'
 })
 </script>

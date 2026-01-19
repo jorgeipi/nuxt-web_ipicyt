@@ -1,15 +1,15 @@
 <!-- layers/home/components/mapasitio/CardMap.vue -->
 <script setup lang="ts">
-import { ref } from 'vue'
-import { NuxtLink } from '#components'
-import type { MapaSitioItem } from '../../composables/useMapaSitio'
+// ✅ Ya no necesitas estos imports:
+// import { ref } from 'vue'  ← Auto-importado por Nuxt
+// import { NuxtLink } from '#components'  ← Auto-importado
+// import type { MapaSitioItem } from '../../composables/useMapaSitio'  ← Auto-importado
 
 interface Props {
   link: MapaSitioItem
 }
 
 const props = defineProps<Props>()
-
 const imgSrc = ref(props.link.image)
 
 const handleMouseEnter = () => {
@@ -89,8 +89,8 @@ const handleMouseLeave = () => {
 </template>
 
 <style lang="scss" scoped>
-@use '@styles/base/variables' as v;
-@use '@styles/base/mixins' as m;
+// @use '@styles/base/variables' as v;
+// @use '@styles/base/mixins' as m;
 
 .card-map {
   background-color: #EFEFEF;
@@ -102,9 +102,9 @@ const handleMouseLeave = () => {
   flex-direction: column;
   transition: filter 0.3s ease;
 
-  @include m.tablet {
-    max-width: 31.1rem;
-  }
+  // @include m.tablet {
+  //   max-width: 31.1rem;
+  // }
 
   .card-header {
     .card-image {
@@ -156,7 +156,7 @@ const handleMouseLeave = () => {
 
       .card-body {
         .paragraph {
-          color: v.$strong-blue3;
+          // color: v.$strong-blue3;
           text-decoration: underline;
         }
       }
@@ -164,7 +164,7 @@ const handleMouseLeave = () => {
       .card-footer {
         .box-enlace_entrar {
           .card-enlace_entrar {
-            color: v.$black;
+            // color: v.$black;
             text-decoration: underline;
           }
         }
@@ -182,14 +182,14 @@ const handleMouseLeave = () => {
           margin-bottom: 1.5rem;
 
           .item {
-            color: v.$black;
+            // color: v.$black;
             font-size: 1.5rem;
             font-style: normal;
             font-weight: 400;
             line-height: 1.9rem;
 
             &:hover {
-              color: v.$strong-blue3;
+              // color: v.$strong-blue3;
               text-decoration: underline;
             }
           }
@@ -197,7 +197,7 @@ const handleMouseLeave = () => {
       }
 
       .paragraph {
-        color: v.$black;
+        // color: v.$black;
         font-size: 1.5rem;
         font-style: normal;
         font-weight: 400;
@@ -212,7 +212,7 @@ const handleMouseLeave = () => {
         align-items: center;
 
         .card-enlace_entrar {
-          color: v.$strong-blue3;
+          // color: v.$strong-blue3;
           font-size: 1.5rem;
           font-style: normal;
           font-weight: 700;

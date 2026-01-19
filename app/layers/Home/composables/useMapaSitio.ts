@@ -1,6 +1,13 @@
 // layers/home/composables/useMapaSitio.ts
 import { ref } from 'vue'
 
+// Importar todas las imágenes
+import investigacionImg from '~/assets/images/inicio/investigacion.png'
+import posgradoImg from '~/assets/images/inicio/posgrado.png'
+import laboratorioImg from '~/assets/images/inicio/laboratorio.png'
+import interinstitucionalesImg from '~/assets/images/inicio/interinstitucionales.png'
+import hover1Img from '~/assets/images/inicio/hover_1.png'
+
 export interface MapaSitioItem {
   title: string
   href: string
@@ -18,8 +25,8 @@ export const useMapaSitio = () => {
     {
       title: 'Investigación',
       href: '/investigacion',
-      image: '/imgs/inicio/investigacion.png',
-      hoverImage: '/imgs/inicio/hover_1.png',
+      image: investigacionImg,  // ← Ahora es la referencia importada
+      hoverImage: hover1Img,
       alt: 'Divisiones de Investigación',
       text: 'A esto nos dedicamos',
       extra_text: ['dmb', 'dca', 'dcsd', 'dga', 'dma'],
@@ -31,18 +38,18 @@ export const useMapaSitio = () => {
         'Materiales Avanzados'
       ],
       listUrl: [
-        '/biologia-molecular',
-        '/ciencias-ambientales',
-        '/control-y-sistemas-dinamicos',
-        '/geociencias-aplicadas',
-        '/materiales-avanzados'
+        '/',
+        '/',
+        '/',
+        '/',
+        '/'
       ]
     },
     {
       title: 'Posgrados',
-      href: '/posgrado/programas-posgrado',
-      image: '/imgs/inicio/posgrado.png',
-      hoverImage: '/imgs/inicio/hover_1.png',
+      href: '/',
+      image: posgradoImg,
+      hoverImage: hover1Img,
       alt: 'Posgrados',
       text: 'Doctorados, maestrías, diplomados, cursos, talleres, convocatorias, becas, torneos deportivos, congresos, consejo estudiantil, directorio de alojamiento y más.',
       extra_text: ['bmm', 'ca', 'csd', 'ga', 'ma', 'ea', 'd']
@@ -50,8 +57,8 @@ export const useMapaSitio = () => {
     {
       title: 'Laboratorios Nacionales',
       href: '#',
-      image: '/imgs/inicio/laboratorio.png',
-      hoverImage: '/imgs/inicio/hover_1.png',
+      image: laboratorioImg,
+      hoverImage: hover1Img,
       alt: 'Laboratorios Nacionales',
       text: 'Para academia e industria',
       extra_text: ['cns', 'lanbama', 'linan'],
@@ -61,16 +68,16 @@ export const useMapaSitio = () => {
         '<span class="bold">LINAN:</span> Laboratorio Nacional de Investigaciones en Nanociencias y Nanotecnología'
       ],
       listUrl: [
-        '/laboratorioCNS',
-        '/laboratorioLANBAMA',
-        '/laboratorioLINAN'
+        '/',
+        '/',
+        '/'
       ]
     },
     {
       title: 'Grupos de trabajo interinstitucionales',
       href: '#',
-      image: '/imgs/inicio/interinstitucionales.png',
-      hoverImage: '/imgs/inicio/hover_1.png',
+      image: interinstitucionalesImg,
+      hoverImage: hover1Img,
       alt: 'interinstitucionales',
       text: 'Para academia e industria',
       extra_text: ['cns', 'lanbama', 'linan', 'linan'],
@@ -81,10 +88,10 @@ export const useMapaSitio = () => {
         'Red Internacional para la Sostenibilidad de las Zonas Áridas'
       ],
       listUrl: [
-        '/cienciaIngenieria',
-        '/arsenic',
-        '/lemur',
-        '/risza'
+        '/',
+        '/',
+        '/',
+        '/'
       ]
     }
   ])

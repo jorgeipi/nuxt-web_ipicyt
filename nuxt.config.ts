@@ -1,15 +1,11 @@
-// nuxt.config.ts
+// nuxt.config.ts (raíz del proyecto)
 export default defineNuxtConfig({
   extends: [
-    './layers/Home',
+    './app/layers/home',
+    './app/layers/about',
+    './app/layers/vinculacion',
   ],
   
   compatibilityDate: '2025-01-15',
-  devtools: { enabled: true },
-  
-  imports: {
-    autoImport: false
-  },
-  
-  components: false
+  devtools: { enabled: true }
 })

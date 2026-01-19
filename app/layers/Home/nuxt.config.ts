@@ -1,3 +1,8 @@
+import { defineNuxtConfig } from 'nuxt/config'
+
+// app/layers/Home/nuxt.config.ts
 export default defineNuxtConfig({
-  // Sin configuración especial, hereda del principal
+  components: [
+    { path: 'components', pathPrefix: false },
+  ]
 })

@@ -1,7 +1,8 @@
 <!-- layers/home/components/mapasitio/MapaSitio.vue -->
 <script setup lang="ts">
-import { useMapaSitio } from '../../composables/useMapaSitio'
-import CardMap from './CardMap.vue'
+// ✅ Ya no necesitas estos imports:
+// import { useMapaSitio } from '../../composables/useMapaSitio'  ← Auto-importado
+// import CardMap from './CardMap.vue'  ← Auto-importado
 
 const { items } = useMapaSitio()
 </script>
