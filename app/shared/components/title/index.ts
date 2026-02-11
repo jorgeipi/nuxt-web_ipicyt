@@ -1,0 +1,1 @@
+export { default as BlueTitle } from './BlueTitle.vue'

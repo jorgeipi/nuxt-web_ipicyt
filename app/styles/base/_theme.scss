@@ -1,0 +1,161 @@
+/* color palette */
+
+
+:root {
+  /* Base Colors */
+  --v-theme-white: #ffffff;
+  --v-theme-white-soft: #f8f8f8;
+  --v-theme-white-mute: #f2f2f2;
+  
+  --v-theme-black: #000000;
+  --v-theme-black-soft: #222222;
+  --v-theme-black-mute: #282828;
+  
+  /* Grays */
+  --v-theme-dark-gray: #38384F;
+  --v-theme-gray: #838391;
+  --v-theme-light-gray: #D9D9D9;
+  --v-theme-grey-100: #f7fafc;
+  --v-theme-normal-gray: #AAA;
+  --v-theme-paper: #EEEDED;
+  
+  /* Azul Principal - Corporativo/Institucional */
+  --v-theme-primary: #182654;           /* Tu azul oscuro principal */
+  --v-theme-primary-soft: #2a3a6b;
+  --v-theme-primary-mute: #3d4d7a;
+  
+  /* Azul Secundario - Acción/Interactivo (el que usas mucho) */
+  --v-theme-secondary: #2453F7;         /* Tu azul brillante para CTAs */
+  --v-theme-secondary-soft: #2b6fe3;    /* Hover/Estados */
+  --v-theme-secondary-mute: #1B4388;    /* Versión más oscura */
+  
+  /* Azules de Apoyo */
+  --v-theme-blue-accent: #0E149B;       /* Para detalles/énfasis */
+  --v-theme-blue-light: #d2e0f9;        /* Para fondos/backgrounds */
+
+  /* Azules / Grises Azulados */
+  --v-theme-blue-muted: #48547c;   /* Texto secundario con peso */
+  --v-theme-blue-gray: #848BA6;    /* Texto/UI suave, iconos, labels */
+
+  /* Additional Colors */
+  --v-theme-cian-analogo: hsl(188, 77%, 53%);
+  --v-theme-green: #009377;
+  --v-theme-green-alert: #14A204;
+  --v-theme-red: #DC143C;
+  --v-theme-brown: #BC955C;
+  //Alert
+  
+  
+  /* Footer Colors */
+  --v-theme-footer-green: #15322C;
+  --v-theme-footer-red: #611232;
+  --v-theme-footer-brown: #ddc8a2;
+  
+  /* Divisiones/Departamentos */
+  --v-theme-dbm: #F79420;
+  --v-theme-dca: #00A650;
+  --v-theme-dcsd: #EC2227;
+  --v-theme-dga: #00ADEE;
+  --v-theme-dma: #714C9A;
+  --v-theme-cns: #714C9A;
+  --v-theme-lambama: #87cefa;
+  --v-theme-linan: #f08080;
+  
+  /* Dividers */
+  --v-theme-divider-light-1: rgba(60, 60, 60, 0.29);
+  --v-theme-divider-light-2: rgba(60, 60, 60, 0.12);
+  --v-theme-divider-dark-1: rgba(84, 84, 84, 0.65);
+  --v-theme-divider-dark-2: rgba(84, 84, 84, 0.48);
+  
+  /* Text Colors */
+  --v-theme-text-light-1: var(--v-theme-primary);
+  --v-theme-text-light-2: rgba(60, 60, 60, 0.66);
+  --v-theme-text-dark-1: var(--v-theme-white);
+  --v-theme-text-dark-2: rgba(235, 235, 235, 0.64);
+  
+  /* Fuentes */
+  // --font-family-base: 'Noto Sans', sans-serif;
+  // --font-family-heading: 'Noto Sans', sans-serif;
+}
+
+/* semantic color variables for this project */
+:root {
+  /*White */
+  --color-white: var(--v-theme-white);
+  --color-white-soft: var(--v-theme-white-soft);
+  --color-white-mute: var(--v-theme-white-mute);
+
+  /* Black */
+  --color-black: var(--v-theme-black);
+  --color-black-soft: var(--v-theme-black-soft);
+  --color-black-mute: var(--v-theme-black-mute);
+
+  /* Backgrounds */
+  --color-background: var(--v-theme-white);
+  --color-background-soft: var(--v-theme-white-soft);
+  --color-background-mute: var(--v-theme-white-mute);
+  --color-background-blue: var(--v-theme-blue-light);
+  --color-background-paper: var(--v-theme-paper);
+  
+  /* Borders */
+  --color-border: var(--v-theme-divider-light-2);
+  --color-border-hover: var(--v-theme-divider-light-1);
+  
+  /* Text Colors */
+  --color-heading: var(--v-theme-text-light-1);
+  --color-text: var(--v-theme-text-light-1);
+  --color-text-secondary: var(--v-theme-text-light-2);
+  --color-text-muted: var(--v-theme-blue-muted);
+  --color-text-subtle: var(--v-theme-blue-gray);
+  
+  /* Primary Colors - Corporativo/Institucional */
+  --color-primary: var(--v-theme-primary);
+  --color-primary-soft: var(--v-theme-primary-soft);
+  --color-primary-mute: var(--v-theme-primary-mute);
+  
+  /* Secondary Colors - Interactivo/CTAs */
+  --color-secondary: var(--v-theme-secondary);
+  --color-secondary-hover: var(--v-theme-secondary-soft);
+  --color-secondary-active: var(--v-theme-secondary-mute);
+  
+  /* Accent Colors */
+  --color-accent: var(--v-theme-blue-accent);
+  
+  /* Status/Alert Colors */
+  --color-success: var(--v-theme-green-alert);
+  --color-error: var(--v-theme-red);
+  --color-warning: var(--v-theme-dbm);
+  --color-info: var(--v-theme-secondary);
+  
+  /* Gray Scale */
+  --color-gray: var(--v-theme-gray);
+  --color-gray-light: var(--v-theme-light-gray);
+  --color-gray-dark: var(--v-theme-dark-gray);
+  --color-gray-normal: var(--v-theme-normal-gray);
+
+  /* Divisiones */
+  --color-dca: var(--v-theme-dca);
+  
+  /* Layout */
+  --section-gap: 160px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Backgrounds - Dark mode */
+    --color-background: var(--v-theme-black);
+    --color-background-soft: var(--v-theme-black-soft);
+    --color-background-mute: var(--v-theme-black-mute);
+    --color-background-blue: var(--v-theme-primary-mute);
+    
+    /* Borders - Dark mode */
+    --color-border: var(--v-theme-divider-dark-2);
+    --color-border-hover: var(--v-theme-divider-dark-1);
+    
+    /* Text Colors - Dark mode */
+    --color-heading: var(--v-theme-text-dark-1);
+    --color-text: var(--v-theme-text-dark-2);
+    --color-text-secondary: var(--v-theme-gray);
+    --color-text-muted: var(--v-theme-gray);
+  }
+}

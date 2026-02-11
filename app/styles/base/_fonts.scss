@@ -1,0 +1,144 @@
+/* ============================================
+   FUENTE PATRIA
+   ============================================ */
+@font-face {
+  font-family: 'Patria';
+  src: url('@/assets/fonts/Patria/Patria_Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Patria';
+  src: url('@/assets/fonts/Patria/Patria_Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Patria';
+  src: url('@/assets/fonts/Patria/Patria_Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* ============================================
+   FUENTE GMX - Versiones Normales
+   ============================================ */
+
+/* Light */
+@font-face {
+  font-family: 'GMX';
+  src: url('@/assets/fonts/GMX/GMX-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'GMX';
+  src: url('@/assets/fonts/GMX/GMX-LightItalic.ttf') format('truetype');
+  font-weight: 300;
+  font-style: italic;
+}
+
+/* Regular */
+@font-face {
+  font-family: 'GMX';
+  src: url('@/assets/fonts/GMX/GMX-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'GMX';
+  src: url('@/assets/fonts/GMX/GMX-RegularItalic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+}
+
+/* Bold */
+@font-face {
+  font-family: 'GMX';
+  src: url('@/assets/fonts/GMX/GMX-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'GMX';
+  src: url('@/assets/fonts/GMX/GMX-BoldItalic.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+}
+
+/* Black */
+@font-face {
+  font-family: 'GMX';
+  src: url('@/assets/fonts/GMX/GMX-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'GMX';
+  src: url('@/assets/fonts/GMX/GMX-BlackItalic.ttf') format('truetype');
+  font-weight: 900;
+  font-style: italic;
+}
+
+/* ============================================
+   FUENTE GMX SC - Small Caps (Versalitas)
+   ============================================ */
+
+/* Light Small Caps */
+@font-face {
+  font-family: 'GMX SC';
+  src: url('@/assets/fonts/GMX/GMX-LightItalicSc.ttf') format('truetype');
+  font-weight: 300;
+  font-style: italic;
+}
+
+/* Regular Small Caps */
+@font-face {
+  font-family: 'GMX SC';
+  src: url('@/assets/fonts/GMX/GMX-RegularSc.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'GMX SC';
+  src: url('@/assets/fonts/GMX/GMX-RegularItalicSc.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+}
+
+/* Bold Small Caps */
+@font-face {
+  font-family: 'GMX SC';
+  src: url('@/assets/fonts/GMX/GMX-BoldSc.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'GMX SC';
+  src: url('@/assets/fonts/GMX/GMX-BoldItalicSc.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+}
+
+/* Black Small Caps */
+@font-face {
+  font-family: 'GMX SC';
+  src: url('@/assets/fonts/GMX/GMX-BlackSc.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'GMX SC';
+  src: url('@/assets/fonts/GMX/GMX-BlackItalicSc.ttf') format('truetype');
+  font-weight: 900;
+  font-style: italic;
+}

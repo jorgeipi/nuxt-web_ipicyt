@@ -1,0 +1,57 @@
+/* color palette */
+:root {
+  --v-theme-white: #ffffff;
+  --v-theme-white-soft: #f8f8f8;
+  --v-theme-white-mute: #f2f2f2;
+  
+  --v-theme-black: #181818;
+  --v-theme-black-soft: #222222;
+  --v-theme-black-mute: #282828;
+  
+  --v-theme-primary: #182654;
+  --v-theme-primary-soft: #2a3a6b;
+  --v-theme-primary-mute: #3d4d7a;
+  
+  --v-theme-divider-light-1: rgba(60, 60, 60, 0.29);
+  --v-theme-divider-light-2: rgba(60, 60, 60, 0.12);
+  --v-theme-divider-dark-1: rgba(84, 84, 84, 0.65);
+  --v-theme-divider-dark-2: rgba(84, 84, 84, 0.48);
+  
+  --v-theme-text-light-1: var(--v-theme-primary);
+  --v-theme-text-light-2: rgba(60, 60, 60, 0.66);
+  --v-theme-text-dark-1: var(--v-theme-white);
+  --v-theme-text-dark-2: rgba(235, 235, 235, 0.64);
+}
+
+/* semantic color variables for this project */
+:root {
+  --color-background: var(--v-theme-white);
+  --color-background-soft: var(--v-theme-white-soft);
+  --color-background-mute: var(--v-theme-white-mute);
+  
+  --color-border: var(--v-theme-divider-light-2);
+  --color-border-hover: var(--v-theme-divider-light-1);
+  
+  --color-heading: var(--v-theme-text-light-1);
+  --color-text: var(--v-theme-text-light-1);
+  
+  --color-primary: var(--v-theme-primary);
+  --color-primary-soft: var(--v-theme-primary-soft);
+  --color-primary-mute: var(--v-theme-primary-mute);
+  
+  --section-gap: 160px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-background: var(--v-theme-black);
+    --color-background-soft: var(--v-theme-black-soft);
+    --color-background-mute: var(--v-theme-black-mute);
+    
+    --color-border: var(--v-theme-divider-dark-2);
+    --color-border-hover: var(--v-theme-divider-dark-1);
+    
+    --color-heading: var(--v-theme-text-dark-1);
+    --color-text: var(--v-theme-text-dark-2);
+  }
+}

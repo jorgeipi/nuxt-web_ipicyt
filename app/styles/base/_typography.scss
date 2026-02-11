@@ -1,0 +1,70 @@
+@use 'sass:map';
+@use './variables' as v;
+
+// Generar clases de tipografía automáticamente
+@each $name, $props in v.$typography {
+  .text-#{$name} {
+    font-size: map.get($props, 'size') !important;
+    font-weight: map.get($props, 'weight') !important;
+    line-height: map.get($props, 'line-height');
+    font-family: map.get($props, 'font-family');
+    
+    @if map.get($props, 'text-transform') {
+      text-transform: map.get($props, 'text-transform') !important;
+    }
+    
+    @if map.get($props, 'letter-spacing') {
+      letter-spacing: map.get($props, 'letter-spacing') !important;
+    }
+  }
+}
+
+
+// Generar clases de font-weight
+@each $name, $weight in $font-weights {
+  .font-weight-#{$name} {
+    font-weight: $weight !important;
+  }
+}
+
+// Generar clases de font-style
+@each $name, $style in $font-styles {
+  .font-#{$name} {
+    font-style: $style !important;
+  }
+}
+
+// También generar clases para los tags HTML
+h1, .h1 { @extend .text-h1; }
+h2, .h2 { @extend .text-h2; }
+h3, .h3 { @extend .text-h3; }
+h4, .h4 { @extend .text-h4; }
+h5, .h5 { @extend .text-h5; }
+h6, .h6 { @extend .text-h6; }
+
+body {
+  font-family: v.$body-font-family;
+  font-size: v.$font-size-root;
+  line-height: normal;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: v.$heading-font-family;    
+}
+
+p{
+  font-family: v.$body-font-family;
+  font-size: v.$font-size-root;
+  line-height: normal;
+}
+
+a{
+  &:hover{
+    font-weight: bold;
+  }
+}

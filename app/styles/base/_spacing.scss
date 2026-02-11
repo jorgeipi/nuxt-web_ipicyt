@@ -1,0 +1,83 @@
+@use 'sass:map';
+@use './variables' as v;
+
+// Generar clases de margin
+@each $size, $value in v.$spacers {
+  // Margin All
+  .ma-#{$size} { margin: $value !important; }
+  
+  // Margin Top
+  .mt-#{$size} { margin-top: $value !important; }
+  
+  // Margin Right
+  .mr-#{$size} { margin-right: $value !important; }
+  
+  // Margin Bottom
+  .mb-#{$size} { margin-bottom: $value !important; }
+  
+  // Margin Left
+  .ml-#{$size} { margin-left: $value !important; }
+  
+  // Margin X (horizontal)
+  .mx-#{$size} { 
+    margin-left: $value !important;
+    margin-right: $value !important;
+  }
+  
+  // Margin Y (vertical)
+  .my-#{$size} { 
+    margin-top: $value !important;
+    margin-bottom: $value !important;
+  }
+}
+
+// Generar clases de padding
+@each $size, $value in v.$spacers {
+  // Padding All
+  .pa-#{$size} { padding: $value !important; }
+  
+  // Padding Top
+  .pt-#{$size} { padding-top: $value !important; }
+  
+  // Padding Right
+  .pr-#{$size} { padding-right: $value !important; }
+  
+  // Padding Bottom
+  .pb-#{$size} { padding-bottom: $value !important; }
+  
+  // Padding Left
+  .pl-#{$size} { padding-left: $value !important; }
+  
+  // Padding X (horizontal)
+  .px-#{$size} { 
+    padding-left: $value !important;
+    padding-right: $value !important;
+  }
+  
+  // Padding Y (vertical)
+  .py-#{$size} { 
+    padding-top: $value !important;
+    padding-bottom: $value !important;
+  }
+}
+
+// Generar clases de gap
+@each $size, $value in v.$spacers {
+  .ga-#{$size} { gap: $value !important; }
+  .gap-#{$size} { gap: $value !important; } // Alias
+}
+
+// Margin/Padding Auto
+.ma-auto { margin: auto !important; }
+.mx-auto { 
+  margin-left: auto !important; 
+  margin-right: auto !important; 
+}
+.my-auto { 
+  margin-top: auto !important; 
+  margin-bottom: auto !important; 
+}
+.ml-auto { margin-left: auto !important; }
+.mr-auto { margin-right: auto !important; }
+.mt-auto { margin-top: auto !important; }
+.mb-auto { margin-bottom: auto !important; }

@@ -1,82 +1,171 @@
+@use 'sass:math';
+@use 'sass:map';
+@use 'sass:meta';
 
-//! Variables de Header y Sidebar
-//* Header
-$header-height: 11rem;
-$logo-ipicyt: 13.6rem;
-$breadcrumbs-height: 3rem;
+// This will false all colors which is not necessory for theme
+$color-pack: false;
 
-//* Heade Responsive
-$header-height-mobile: 4.8rem;
-$width-toggle-button: 4.8rem;
-$inputRes-height: 4.2rem;
+// Global font size and border radius
+$font-size-root: 1.5rem;
+$border-radius-root: 12px;
+$body-font-family: 'Noto Sans', sans-serif !default;
+$heading-font-family: $body-font-family !default;
+$btn-font-weight: 400 !default;
+$btn-letter-spacing: 0 !default;
 
-//* Sidebar
-$sidebar-width: 27rem;
+// Custom Variables
+// colors
+$white: #fff !default;
 
-//* HeaderGob
-$header-height-gob: 6rem;
+// cards
+$card-item-spacer-xy: 20px 24px !default;
+$card-text-spacer: 24px !default;
+$card-title-size: 18px !default;
+// Global Shadow
+$box-shadow: 1px 0 20px rgb(0 0 0 / 8%);
 
-//* Header Speed
-$header-speed: 0.3s;
+.color-secondary{
+  color: var(--color-secondary)!important;
+}
 
-//* Fonts
-$primaryFont: "Noto Sans", serif;
-$light: 300;
-$regular : 400;
-$medium: 500;
-$light-bold: 600;
-$bold: 700;
+// Global Radius as per breakeven point
+$rounded: (
+  0: 0,
+  'sm': $border-radius-root * 0.5,
+  null: $border-radius-root,
+  'md': $border-radius-root * 1,
+  'lg': $border-radius-root * 2,
+  'xl': $border-radius-root * 6,
+  'pill': 9999px,
+  'circle': 50%,
+  'shaped': $border-radius-root * 6 0
+) !default;
 
-// * Sombras
-$boxshadow:rgba(0, 0, 0, 0.1);
+// Global Typography
+$typography: (
+  'h1': (
+    'size': 2.125rem,
+    'weight': 700,
+    'line-height': 3.5rem,
+    'font-family': inherit
+  ),
+  'h2': (
+    // 'size': 1.5rem,
+    'size': 2.2rem,
+    'weight': 700,
+    'line-height': normal,
+    // 'line-height': 2.5rem,
+    'font-family': inherit
+  ),
+  'h3': (
+    'size': 2rem,
+    'weight': 700,
+    'line-height': normal,
+    'font-family': inherit
+  ),
+  'h4': (
+    'size': 1rem,
+    'weight': 600,
+    'line-height': 1.5rem,
+    'font-family': inherit
+  ),
+  'h5': (
+    'size': 0.875rem,
+    'weight': 500,
+    'line-height': 1.2rem,
+    'font-family': inherit
+  ),
+  'h6': (
+    'size': 1.5rem,
+    'weight': 700,
+    'font-family': inherit
+  ),
+  'subtitle-1': (
+    'size': 0.875rem,
+    'weight': 500,
+    'line-height': 1rem,
+    'font-family': inherit
+  ),
+  'subtitle-2': (
+    'size': 0.75rem,
+    'weight': 400,
+    'line-height': 1rem,
+    'font-family': inherit
+  ),
+  'body-1': (
+    'size': 1.5rem,
+    // 'size': 0.875rem,
+    'weight': 400,
+    'line-height': normal,
+    'font-family': inherit
+  ),
+  'body-2': (
+    'size': 1.2rem,
+    // 'size': 0.75rem,
+    'weight': 400,
+    'line-height': normal,
+    'font-family': inherit
+  ),
+  'button': (
+    'size': 0.875rem,
+    'weight': 500,
+    'font-family': inherit,
+    'text-transform': none,
+    'letter-spacing': 0
+  ),
+  'caption': (
+    'size': 0.75rem,
+    'weight': 400,
+    'font-family': inherit
+  ),
+  'overline': (
+    'size': 0.75rem,
+    'weight': 500,
+    'font-family': inherit,
+    'text-transform': uppercase
+  ),
+) !default;
 
-$separacion: 2rem;
 
-//* Tamaños de Media Queries Propuesta
-$mobilexs: 368px;
-$mobile: 480px;
-$tablet: 768px;
-$desktop: 992px;
-$desktopXL: 1200px;
-$desktop1600: 1600px;
+// Font Weights Map
+$font-weights: (
+  'black': 900,
+  'bold': 700,
+  'semibold': 600,
+  'medium': 500,
+  'regular': 400,
+  'light': 300,
+  'thin': 100
+) !default;
 
-//* Tamaños de Media Queries del Gobierno para container (Header)
-$container-sm: 768px;
-$container-md: 992px;
-$container-lg: 1200px;
-
-//* Colors
-$white: hsl(0, 0%, 100%); // #FFFFFF, rgb(255, 255, 255)
-$black: hsl(0, 0%, 0%); // #000000, rgb(0, 0, 0)
-$dark-gray: hsl(240, 17%, 26%); // #38384F, rgb(56, 56, 79)
-$gray: hsl(240, 6%, 54%); // #838391, rgb(131, 131, 145)
-$light-gray: #D9D9D9;
-$grey-100:#f7fafc;
-$normal-gray: #AAA;
-$dark-blue: hsl(226, 56%, 21%); // #182654, rgb(24,38,84)
-$strong-blue: hsl(218,67%,32%); // #1B4388, rgb(27,67,136)
-$strong-blue2: hsl(218, 77%, 53%); // #2b6fe3, rgb(43,111,227)
-$strong-blue3: hsl(227,93%,55%); // #2453F7, rgb(36,83,247)
-$strong-blue4: #0E149B; // #0E149B, rgb(36,83,247)
-$gray-blue: hsl(226,27%,38%); // #48547c, rgb(72,84,124)
-$cian-analogo: hsl(188, 77%, 53%);
-$back-blue: hsl(218,77%,90%); // #d2e0f9, rgb(210,224,249)
-$green-alert:#14A204; //
-$green: hsl(169,100%,29%); // #009377, rgb(0,147,119)
-$red: hsl(348, 83%, 47%); // #DC143C, rgb(220, 20, 60)
-$brown: hsl(36,42%,55%); // #BC955C, rgb(188,149,92)
+// Font Styles
+$font-styles: (
+  'italic': italic,
+  'normal': normal
+) !default;
 
 
-//* footer colors:
-$main--footer-green: hsl(168,41%,14%); // #15322C, rgb(21,50,44)
-$main--footer-red: hsl(336,69%,23%); // #611232, rgb(97,18,50);
-$body--footer-brown: hsl(39,46%,75%); // #ddc8a2, rgb(221,200,162)
-
-$dbm: hsl(32,93%,55%); // #F79420, rgb(247,148,32)
-$dca: hsl(149,100%,33%); // #00A650, rgb(0,166,80) 
-$dcsd: hsl(359,84%,53%); // #EC2227, rgb(236,34,39)
-$dga: hsl(196,100%,47%); // #00ADEE, rgb(0,173,238)
-$dma: hsl(268,34%,45%); // #714C9A, rgb(113,76,154)
-$cns: hsl(268,34%,45%); // #714C9A, rgb(113,76,154)
-$lambama: hsl(203,92%,75%); // #87cefa, rgb(135,206,250)
-$linan: hsl(0,79%,72%); // #f08080, rgb(240,128,128)
+// Spacing Scale (similar a Vuetify)
+$spacing-unit: 4px;
+$spacers: (
+  0: 0,
+  1: $spacing-unit * 1,   // 4px
+  2: $spacing-unit * 2,   // 8px
+  3: $spacing-unit * 3,   // 12px
+  4: $spacing-unit * 4,   // 16px
+  5: $spacing-unit * 5,   // 20px
+  6: $spacing-unit * 6,   // 24px
+  7: $spacing-unit * 7,   // 28px
+  8: $spacing-unit * 8,   // 32px
+  9: $spacing-unit * 9,   // 36px
+  10: $spacing-unit * 10, // 40px
+  12: $spacing-unit * 12, // 48px
+  13: $spacing-unit * 13, // 52px
+  14: $spacing-unit * 14, // 56px
+  15: $spacing-unit * 15, // 60px
+  16: $spacing-unit * 16,  // 64px
+  17: $spacing-unit * 17,  // 68px
+  18: $spacing-unit * 18,  // 72px
+  19: $spacing-unit * 19,  // 76px
+  20: $spacing-unit * 20,  // 80px
+) !default;

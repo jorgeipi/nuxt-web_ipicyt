@@ -14,5 +14,15 @@
     {
       "path": "./.nuxt/tsconfig.node.json"
     }
-  ]
+  ],
+
+  "compilerOptions": {
+    "paths": {
+      "@/*": ["./app/*"],
+      "@shared/*": ["./app/shared/*"],
+      "@stores/*": ["./app/shared/stores/*"],
+      "@composables/*": ["./app/shared/composables/*"],
+      "@components/*": ["./app/shared/components/*"],
+    }
+  }
 }

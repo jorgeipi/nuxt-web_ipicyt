@@ -1,90 +1,76 @@
-@use 'variables' as v;
+// _mixins.scss
+//* Tamaños de Media Queries Propuesta
+$mobilexs: 368px;
+$mobile: 480px;
+$tablet: 768px;
+$desktop: 992px;
+$desktopXL: 1200px;
+$desktop1600: 1600px;
 
-//* MIXINS propuestos
+
+// Mobile Extra Small (max-width)
 @mixin mobilexs {
-    @media (max-width: v.$mobilexs) {
-        @content;
-    }
-}
-@mixin mobile {
-    @media (max-width: v.$mobile) {
-        @content;
-    }
-}
-@mixin tablet {
-    @media (max-width: v.$tablet) {
-        @content;
-    }
-}
-@mixin desktop {
-    @media (max-width: v.$desktop) {
-        @content;
-    }
-}
-@mixin desktopXL {
-    @media (max-width: v.$desktopXL) {
-        @content;
-    }
-}
-
-
-@mixin desktop1600 {
-    @media (max-width: v.$desktop1600) {
-        @content;
-    }
-}
-
-
-//* MIXINS PARA CONTAINER DE GOBIERNO
-@mixin container-sm {
-    @media (min-width: v.$tablet) {
-        @content;
-    }
-}
-@mixin container-md {
-    @media (min-width: v.$desktop) {
-        @content;
-    }
-}
-@mixin container-lg {
-    @media (min-width: v.$desktopXL) {
-        @content;
-    }
-}
-
-
-
-//* MIXINS PARA GRID
-@mixin grid($columnas, $espaciado) {
-    display: grid;
-    grid-template-columns: repeat($columnas, 1fr);
-    gap: $espaciado;
-}
-
-
-@mixin scroll-style($size: 1rem,
-  $thumb: none,
-  $thumb-color: grey,
-  $thumb-radius: 1rem,
-  $track-color: transparent,
-  $track-radius: 1rem) {
-
-  @supports not (selector(::-webkit-scrollbar-thumb)) {
-    scrollbar-color: $thumb-color $track-color;
-    scrollbar-width: thin;
+  @media (max-width: #{$mobilexs}) {
+    @content;
   }
+}
 
-  &::-webkit-scrollbar {
-    width: $size;
-    height: $size;
-    &-track {
-      background-color: $track-color;
-      border-radius: $track-radius;
-    }
-    &-thumb {
-      background-color: $thumb-color;
-      background-image: $thumb;
-      border-radius: $thumb-radius;
-    }
+// Mobile (max-width)
+@mixin mobile {
+  @media (max-width: #{$mobile}) {
+    @content;
+  }
+}
+
+// Tablet (max-width)
+@mixin tablet {
+  @media (max-width: #{$tablet}) {
+    @content;
+  }
+}
+
+// Desktop (min-width)
+@mixin desktop {
+  @media (max-width: #{$desktop}) {
+    @content;
+  }
+}
+
+// Desktop XL (min-width)
+@mixin desktopXL {
+  @media (max-width: #{$desktopXL}) {
+    @content;
+  }
+}
+
+// Desktop 1600 (min-width)
+@mixin desktop1600 {
+  @media (min-width: #{$desktop1600}) {
+    @content;
+  }
+}
+
+// ============================================
+// MIXINS AVANZADOS (MÁS FLEXIBLES)
+// ============================================
+
+// Entre rangos
+@mixin between($min, $max) {
+  @media (min-width: #{$min}) and (max-width: #{$max}) {
+    @content;
+  }
+}
+
+// Solo mobile (hasta tablet)
+@mixin only-mobile {
+  @media (max-width: #{$tablet - 1px}) {
+    @content;
+  }
+}
+
+// Tablet a Desktop
+@mixin tablet-to-desktop {
+  @media (min-width: #{$tablet}) and (max-width: #{$desktop - 1px}) {
+    @content;
   }
 }
