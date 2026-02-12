@@ -1,6 +1,6 @@
 import { reportError } from '@shared/utils/logger';
-import { getPersonal } from '../api/personal-api';
-import { personalSinError } from '../helpers/index';
+import { getPersonal } from '@shared/services/personal/personal-api';
+import { personalSinError } from './fetchPersonalSinError';
 
 /**
  * Realiza una solicitud para obtener personal.

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ArrowDFGreen, HandRFBlueIcon } from '@components/icons'
-import { info } from '../data/salas/info.js'
+import { info } from '@data/home/salas/info.js'
 import { AccordionLeft } from '@components/accordion'
 </script>
 

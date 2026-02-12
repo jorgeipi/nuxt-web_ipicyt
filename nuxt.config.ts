@@ -1,7 +1,7 @@
 import { fileURLToPath } from 'node:url'
 
 export default defineNuxtConfig({
-  modules: ['@nuxtjs/google-fonts'],
+  modules: ['@nuxtjs/google-fonts', '@nuxtjs/leaflet', 'nuxt-aos', '@pinia/nuxt'],
   
   googleFonts: {
     families: {
@@ -20,7 +20,7 @@ export default defineNuxtConfig({
   // Alias
   alias: {
     '@': fileURLToPath(new URL('./app', import.meta.url)),
-    '@data': fileURLToPath(new URL('./app/data', import.meta.url)),
+    '@data': fileURLToPath(new URL('./app/shared/data', import.meta.url)),
     '@shared': fileURLToPath(new URL('./app/shared', import.meta.url)),
     '@stores': fileURLToPath(new URL('./app/shared/stores', import.meta.url)),
     '@composables': fileURLToPath(new URL('./app/shared/composables', import.meta.url)),
