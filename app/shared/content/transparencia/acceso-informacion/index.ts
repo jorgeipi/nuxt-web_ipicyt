@@ -1,2 +1,7 @@
 export { default as unidadTransparencia } from './unidadTransparencia.vue'
 export { default as comiteTransparencia } from './comiteTransparencia.vue'
+export { default as obligacionesTransparencia } from './obligacionesTransparencia.vue'
+export { default as solicitudes } from './solicitudes.vue'
+export { default as informeGubernamental } from './informeGubernamental.vue'
+export { default as indiceExpedientes } from './indiceExpedientes.vue'
+export { default as calendarioInstitucional } from './calendarioInstitucional.vue'

@@ -18,7 +18,6 @@ const columnsT1 = [
     <section>
         <TitleOverline class="mb-8"><h2>Unidad de Transparencia</h2></TitleOverline>
         <TableGray 
-            title="Unidad de Transparencia"
             :columns="columnsT1" 
             :data="dataT1" 
         />

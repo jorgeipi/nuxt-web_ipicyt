@@ -1,36 +1,55 @@
 <script setup>
-import btn_blue from "@ipicyt/components/button/general/btn_blue.vue";
-import AcordeonGeneral from "@ipicyt/components/item/AcordeonGeneral.vue";
-import TitleOverline from "@ipicyt/components/item/TitleOverline.vue";
-import { items } from "../data/aperturaGubernamental";
+// import btn_blue from "@ipicyt/components/button/general/btn_blue.vue";
+// import AcordeonGeneral from "@ipicyt/components/item/AcordeonGeneral.vue";
+// import { items } from "../data/aperturaGubernamental";
 
-import { onMounted } from "vue";
-import { setTopImg } from "@shared/helpers/setTopImg";
-import { transparenciaTopImages } from "@modules/transparencia/data/topImages";
-const { topImg, topTitle } = transparenciaTopImages.aperturaGubernamental;
-const basePath = import.meta.env.VITE_IMG_PATH_SOURCE + '/transparencia/aperturaGubernamental'; 
+// const basePath = import.meta.env.VITE_IMG_PATH_SOURCE + '/transparencia/aperturaGubernamental'; 
 
-onMounted(() => {
-    setTopImg(topImg, topTitle);
-});
+import { ButtonLink } from '@components/buttons';
+import { getAperturaGubernamentalPath } from '@shared/helpers/transparencia/getPath';
+import { AccordionLeft } from '~/shared/components/accordion';
 </script>
 
 <template>
-    <div class="apertura">
-        <h1>Transparencia: <span style="font-weight: 400;">Apertura Gubernamental</span></h1>
-        <TitleOverline>{{ "Información socialmente útil" }}</TitleOverline>
-        <p>Aquí encontraras información básica del IPICYT como antecedentes de creación, disposiciones legales, objeto,
-            atribuciones, funciones, etc.</p>
-        <btn_blue style="background-color: #848BA6"
-            :url="`${basePath}/Manual_Orgz_IPICYT_FINAL.pdf`">
-            <h4>Manual de Organización del Instituto Potosino de Investigación Científica y Tecnológica, A.C.</h4>
-        </btn_blue>
-        <btn_blue style="background-color: #848BA6"
-            :url="`${basePath}/Acta%20Constitutiva%20Protocolizacion%20IJC%202021.pdf`">
-            <h4>Acta Constitutiva o Instrumento Jurídico de Creación del Instituto Potosino de Investigación Científica
-                y Tecnológica, A.C.</h4>
-        </btn_blue>
-        <TitleOverline style="margin-top: 7.2rem;">{{ "Servicios y trámites de IPICYT" }}</TitleOverline>
+    <div class="apertura-gubernamental">
+        <h2>Transparencia: <span class="font-weight-regular">Apertura Gubernamental</span></h2>
+
+        <div class="d-flex flex-column ga-5 mb-18">
+            <TitleOverline><h2>Información socialmente útil</h2></TitleOverline>
+
+            <p>Aquí encontraras información básica del IPICYT como antecedentes de creación, disposiciones legales, objeto,
+                atribuciones, funciones, etc.</p>
+
+            <ButtonLink :href="getAperturaGubernamentalPath('Manual_Orgz_IPICYT_FINAL.pdf')" :color="'var(--color-text-subtle)'">
+                <p>Manual de Organización del Instituto Potosino de Investigación Científica y Tecnológica, A.C.</p>
+            </ButtonLink>
+
+            <ButtonLink :href="getAperturaGubernamentalPath('Acta Constitutiva Protocolizacion IJC 2021.pdf')" :color="'var(--color-text-subtle)'">
+                <p>Acta Constitutiva o Instrumento Jurídico de Creación del Instituto Potosino de Investigación Científica
+                    y Tecnológica, A.C.</p>
+            </ButtonLink>
+        </div>
+
+        <div class="d-flex flex-column ga-5">
+            <TitleOverline><h2>Servicios y trámites de IPICYT</h2></TitleOverline>
+
+            <div class="">
+                <AccordionLeft>
+                    <template #title>
+                        Solicitud de admisión al posgrado
+                    </template>
+                    <template #content>
+                    <ul class="pl-5">
+                        <li><span class="font-weight-bold">Descripción Del Objetivo Del Servicio: </span>Ofrecer a la ciudadanía información para cursar estudios de posgrado en investigación científica en áreas como Biología Molecular, Matemáticas Aplicadas, Materiales Avanzados, Geociencias Aplicadas y Ciencias Ambientales.</li>
+                        <li><span class="font-weight-bold">Modalidad del servicio: </span> Presencial</li>
+                        <li><span class="font-weight-bold">Requisitos: </span> <a class="color-secondary">Formulario</a></li>
+                    </ul>
+                    </template>
+                </AccordionLeft>
+            </div>
+        </div>
+
+        <!-- 
         <AcordeonGeneral v-for="(item, index) in items" :key="index" :title="item.title" :id="index.toString()">
             <ul>
                 <li v-for="(i, j) in item.info" :key="j">
@@ -42,11 +61,14 @@ onMounted(() => {
 
                 </li>
             </ul>
-        </AcordeonGeneral>
+        </AcordeonGeneral> -->
     </div>
 </template>
 
 <style>
+.apertura-gubernamental{
+    max-width: 609px;
+}
 .apertura {
     margin-bottom: 5rem;
     max-width: 609px;

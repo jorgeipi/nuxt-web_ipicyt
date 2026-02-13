@@ -39,12 +39,13 @@ const dataT2= [
           direccion:"Camino a la Presa a San José No. 2055, Lomas 4ª Sección, San Luis Potosí, S.L.P., Edificio de Administración.",
         },
       ]
-const  dataT3= [[
-        "1",
-        "Solicitudes de Acceso a la Información-Plataforma Nacional de Transparencia",
-        "Relacionado con la compra de medicamentos",
-        '<a href="' + basePath + '/Listado_de_consultas_recurrentes.pdf" class="resalte">Listado_de_consultas_recurrentes</a>'
-      ]
+      const dataT3 = [
+            [
+              "1",
+              "Solicitudes de Acceso a la Información-Plataforma Nacional de Transparencia",
+              "Relacionado con la compra de medicamentos",
+              '<a href="' + basePath + '/Listado_de_consultas_recurrentes.pdf" class="resalte">Listado_de_consultas_recurrentes</a>'
+            ]
       ]
 
 export {
