@@ -1,15 +1,5 @@
-<!-- app/shared/components/ui/DataTable.vue -->
 <script setup lang="ts">
-interface Column {
-  key: string;
-  label: string;
-  class?: string;
-}
-
 interface Props {
-  columns: Column[];
-  data: any[];
-  title?: string;
   thSize?: string;
   theadColor?: string;
 }
@@ -18,54 +8,31 @@ const props = withDefaults(defineProps<Props>(), {
   thSize: '1.5rem',
   theadColor: '#848ba6'
 });
-
-const getCellValue = (row: any, key: string) => {
-  if (Array.isArray(row)) {
-    return row[parseInt(key)];
-  }
-  return row[key];
-};
 </script>
 
 <template>
-  <div class="table_content">
+  <div class="table-gray">
     <table>
+      <!-- // slot para body encima de header -->
+      <slot name="body-above" />
       <thead :style="{ backgroundColor: theadColor }">
-        <tr>
-          <th 
-            v-for="column in columns" 
-            :key="column.key" 
-            :class="column.class"
-            :style="{ fontSize: thSize }"
-          >
-            {{ column.label }}
-          </th>
-        </tr>
+        <slot name="thead" :th-size="thSize" />
       </thead>
       <tbody>
-        <tr v-for="(row, index) in data" :key="index">
-          <td 
-            v-for="column in columns" 
-            :key="column.key" 
-            :data-label="column.label" 
-            :class="column.class"
-          >
-            <span v-html="getCellValue(row, column.key)"></span>
-          </td>
-        </tr>
+        <slot name="tbody" />
       </tbody>
     </table>
   </div>
 </template>
 
-<style lang="scss" scoped>
-.table_content {
+<style lang="scss">
+.table-gray {
   .intro-header {
     display: table-header-group;
   }
 }
 
-.table_content {
+.table-gray {
   margin: 0rem 0;
   overflow-x: auto;
 
@@ -165,6 +132,5 @@ const getCellValue = (row: any, key: string) => {
       border-bottom: none;
     }
   }
-
 }
 </style>

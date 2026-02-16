@@ -11,4 +11,5 @@ export const createPathGetter = (basePath: string) => {
 export const getAccesoInfoDenunciasPath = createPathGetter('/transparencia/acceso-informacion/denuncias');
 export const getAccesoInfoIndicePath = createPathGetter('/transparencia/acceso-informacion/indice-expedientes');
 export const getAccesoInfoCalendarioPath = createPathGetter('/transparencia/acceso-informacion/calendario-institucional');
-export const getAperturaGubernamentalPath = createPathGetter('/transparencia/apertura-gubernamental');
+export const getAccesoInfoSolicitudesPath = createPathGetter('/transparencia/acceso-informacion/solicitudes');
+export const getAperturaPath = createPathGetter('/transparencia/apertura-gubernamental');

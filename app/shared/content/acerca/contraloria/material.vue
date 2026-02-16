@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { getContraloriaDifusionPath } from '@shared/helpers/acerca/getPath'
-import { ButtonLink } from '@components/buttons'
 </script>
 
 <template>

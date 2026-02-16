@@ -8,4 +8,10 @@ export const createPathGetter = (basePath: string) => {
     };
 };
 
-export const getProteccionDatosAvisosPath = createPathGetter('/proteccion-de-datos/avisos');
+export const getDatosAvisosPath = createPathGetter('/proteccion-de-datos/avisos');
+
+export const getDatosInfoPoliticasPath = createPathGetter('/proteccion-de-datos/informacion/politicas'); 
+export const getDatosInfoInfografiasPath = createPathGetter('/proteccion-de-datos/informacion/infografias'); 
+export const getDatosInfoProcedimientoPath = createPathGetter('/proteccion-de-datos/informacion/procedimiento');
+export const getDatosInfoGuiaPath = createPathGetter('/proteccion-de-datos/informacion/guia');
+

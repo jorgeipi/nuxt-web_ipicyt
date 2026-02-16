@@ -1,11 +1,9 @@
 <script setup>
-import { AccordionRight } from '@components/accordion'
 import { catalogoInformacion, dictamenes } from '@shared/content/acerca/transparencia';
 
 // import AcordeonItem from "@ipicyt/components/item/AcordeonItem.vue";
 // import AcordeonGeneral from "@ipicyt/components/item/AcordeonGeneral.vue"
 // import {dictamenes,patrimonio,archivo , comiteEticaRecursos} from "../data";
-
 
 import pdf_icon from '/imgs/about/transparencia-proactiva/icons/icono_pdf.png';
 import xls_icon from '/imgs/about/transparencia-proactiva/icons/icono_xls.png';

@@ -1,6 +1,6 @@
 <script setup>
-import { PageSkeleton } from '@components/skeleton'
 import { usePropIntelectual } from '@composables/vinculacion/usePropIntelectual';
+import { PatentesTitle, PatentesAcordeones } from '@shared/content/vinculacion'
 
 const { propiedadIntelectual, personal, allLoading } = usePropIntelectual();
 </script>
@@ -24,10 +24,10 @@ const { propiedadIntelectual, personal, allLoading } = usePropIntelectual();
       </section>
 
       <section class="propIntelectual--content">
-        <VinculacionPatentesTitle>Portafolio de Propiedad Intelectual del IPICYT</VinculacionPatentesTitle>
+        <PatentesTitle>Portafolio de Propiedad Intelectual del IPICYT</PatentesTitle>
 
         <section class="propIntelectual--patentes">
-          <VinculacionPatentesAcordeones :propiedadIntelectual="propiedadIntelectual" v-if="propiedadIntelectual && !allLoading" />
+          <PatentesAcordeones :propiedadIntelectual="propiedadIntelectual" v-if="propiedadIntelectual && !allLoading" />
         </section>
       </section>
 
@@ -38,7 +38,7 @@ const { propiedadIntelectual, personal, allLoading } = usePropIntelectual();
 
     <template v-else>
       <div class="vinculacion--propIntelectual">
-        <PageSkeleton />
+        <SkeletonPage />
       </div>
     </template>
   </TransitionGroup>

@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { avisos } from '@data/proteccion-de-datos/avisos';
-import { ButtonLink } from '@components/buttons'
-import { getProteccionDatosAvisosPath } from '@shared/helpers/proteccion-de-datos/getPath'
+import { getDatosAvisosPath } from '@shared/helpers/proteccion-de-datos/getPath'
 </script>
 
 <template>
@@ -23,11 +22,10 @@ import { getProteccionDatosAvisosPath } from '@shared/helpers/proteccion-de-dato
     
     <div class="dp-avisos__buttons d-flex flex-column ga-5">
       <div v-for="(item, index) in avisos" :key="index">
-        <ButtonLink class="dp-avisos__button justify-start align-start"  :href="getProteccionDatosAvisosPath(item.file)" color="var(--color-text-subtle)">
+        <ButtonLink class="dp-avisos__button justify-start align-start" :href="getDatosAvisosPath(item.file)" color="var(--color-text-subtle)">
             {{ item.title }}
         </ButtonLink>
       </div>
-
     </div>
   </div>
 </template>

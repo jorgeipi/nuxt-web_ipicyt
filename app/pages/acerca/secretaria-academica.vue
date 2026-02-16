@@ -1,5 +1,5 @@
 <script setup>
-import { AccordionRight } from '@components/accordion'
+import AccordionRight from '@/components/accordion/Right.vue'
 import { coordinacion, departamentos, organo, tramites } from '@shared/content/acerca/secretaria'
 
 import { PersonalTipo } from '@shared/constants/personal/personal-tipo';

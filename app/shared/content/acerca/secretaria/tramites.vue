@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { ButtonLink } from '@components/buttons'
 import { getSecretariaSolictudPath, getSecretariaConvocatoriaPath, getSecretariaReglamentoPath } from '@shared/helpers/acerca/getPath'
 </script>
 

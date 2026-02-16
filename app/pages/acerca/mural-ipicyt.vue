@@ -1,5 +1,5 @@
 <script setup>
-// import { Concepto, BlueTitle, Reconocimientos, Agradecimientos, Banner2, MuralData, MuralVideo } from '../components/mural'
+import { Concepto, BlueTitle, Reconocimientos, Agradecimientos, Banner2, Data, Video } from '@shared/content/mural'
 import { getMuralPath } from '@shared/helpers/acerca/getPath';
 </script>
 
@@ -20,16 +20,16 @@ import { getMuralPath } from '@shared/helpers/acerca/getPath';
             </section>
 
             <section class="mural--data">
-                <MuralBanner2 />
+                <Banner2 />
                 <div class="mural--metadata">
-                    <MuralData />
-                    <MuralVideo />
+                    <Data />
+                    <Video />
                 </div>
             </section>
 
             <section class="mural--mean">
                 <div class="mural--mean_boxtitle">
-                    <MuralBlueTitle>Significado y composición</MuralBlueTitle>
+                    <BlueTitle>Significado y composición</BlueTitle>
 
                     <p>Una obra que refleja la esencia del instituto y su visión a futuro.
                         <br /><strong>“Rich Arnauda”</strong>
@@ -37,23 +37,23 @@ import { getMuralPath } from '@shared/helpers/acerca/getPath';
                 </div>
 
                 <div class="mural--mean_conceptos">
-                    <MuralConcepto :img="getMuralPath('concepto1.png')">
+                    <Concepto :img="getMuralPath('concepto1.png')">
                         El mural se inspira en los trazos del logotipo conmemorativo de los 25 años del IPICYT.
-                    </MuralConcepto>
-                    <MuralConcepto :img="getMuralPath('concepto2.png')">
+                    </Concepto>
+                    <Concepto :img="getMuralPath('concepto2.png')">
                         <strong>En su parte superior, un monolito o calendario simboliza la fuerza perdurable de nuestras culturas ancestrales.</strong> Desde una esfera central surge el movimiento visual que conecta toda la composición.
-                    </MuralConcepto>
-                    <MuralConcepto :img="getMuralPath('concepto3.png')">
+                    </Concepto>
+                    <Concepto :img="getMuralPath('concepto3.png')">
                         <strong>Cinco figuras humanas representan las áreas de investigación del Instituto y, a la vez, la diversidad de la humanidad en género, cultura e ideología.</strong> A su alrededor flotan planetas, minerales, células y átomos, reflejando la conexión constante entre el conocimiento y el universo.
-                    </MuralConcepto>
-                    <MuralConcepto :img="getMuralPath('concepto4.png')" class="withouthr">
+                    </Concepto>
+                    <Concepto :img="getMuralPath('concepto4.png')" class="withouthr">
                         Las figuras emergen de los cuatro elementos <strong>—Aire, Agua, Tierra y Fuego—</strong> representados en un estilo gráfico prehispánico que alude a la totalidad del cosmos y a la armonía entre ciencia, naturaleza y espíritu.
-                    </MuralConcepto>
+                    </Concepto>
                 </div>
             </section>
 
             <section class="mural--trayectoria">
-                <MuralBlueTitle class="mural--trayectoria_title">¿Quién es <strong>Rich Arnauda ?</strong></MuralBlueTitle>
+                <BlueTitle class="mural--trayectoria_title">¿Quién es <strong>Rich Arnauda ?</strong></BlueTitle>
 
                 <div class="mural--biografia">
                     <div class="mural--biografia_content">
@@ -77,12 +77,12 @@ import { getMuralPath } from '@shared/helpers/acerca/getPath';
                     </div>
                 </div>
 
-                <MuralReconocimientos />
+                <Reconocimientos />
             </section>
 
             <section class="mural--patrocinadores">
                 <!-- JDRM -->
-                <MuralBlueTitle class="mural--patrocinadores-title">Patrocinadores</MuralBlueTitle>
+                <BlueTitle class="mural--patrocinadores-title">Patrocinadores</BlueTitle>
 
                 <div class="mural--patrocinadores-fleximgs">
                     <div class="mural--patrocinadores-boximg">
@@ -111,11 +111,11 @@ import { getMuralPath } from '@shared/helpers/acerca/getPath';
             </section>
 
             <section class="mural--agradecimientos">
-                <MuralBlueTitle class="mural--agradecimientos_title"><strong>Gracias a toda la comunidad de trabajadores,
+                <BlueTitle class="mural--agradecimientos_title"><strong>Gracias a toda la comunidad de trabajadores,
                         estudiantes y egresados que han cooperado con su donativo</strong> (aparición por orden
-                    alfabético)</MuralBlueTitle>
+                    alfabético)</BlueTitle>
 
-                <MuralAgradecimientos />
+                <Agradecimientos />
             </section>
         </main>
     </div>

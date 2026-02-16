@@ -1,8 +1,21 @@
 <script setup>
-import { AccordionRight } from '@components/accordion'
-import { ButtonLink } from '@components/buttons'
 import { getAccesoInfoDenunciasPath } from '@shared/helpers/transparencia/getPath'
-import { dataDenuncias, columnsDenuncias } from '@data/transparencia/acceso-informacion/denuncias';
+
+const meses = [
+  'enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio',
+  'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'
+];
+
+const dataDenuncias = meses.map((mes, index) => ({
+  no: (index + 1).toString(),
+  anio: '2025',
+  numeroIdentificacion: '',
+  objetoDenuncia: '',
+  sentidoResolucion: '',
+  documentoDenuncia: '',
+  fechaResolucion: '',
+  nota: `En el mes de ${mes}, Transparencia para el Pueblo no emitió ninguna resolución sobre denuncias presentadas contra este Instituto Potosino de Investigación Científica y Tecnológica, A.C.`
+}));
 </script>
 
 <template>
@@ -69,7 +82,33 @@ import { dataDenuncias, columnsDenuncias } from '@data/transparencia/acceso-info
 
                 <div>
                     <p><span class="font-weight-bold">Denuncias ejercicio 2025</span><a class="color-secondary" :href="getAccesoInfoDenunciasPath(`Denuncias_2025.xlsx`)">(descargar tabla)</a></p>
-                    <TableGray class="small" :columns="columnsDenuncias" :data="dataDenuncias" />
+                    <!-- <TableGray class="small" :columns="columnsDenuncias" :data="dataDenuncias" /> -->
+                    <TableGray>
+                        <template #thead>
+                            <tr>
+                                <th>No.</th>
+                                <th>Año</th>
+                                <th>Número de identificación de la denuncia</th>
+                                <th>Objeto de la denuncia</th>
+                                <th>Sentido de la resolución emitida por el Transparencia para el Pueblo</th>
+                                <th>Documento de la denuncia</th>
+                                <th>Fecha en que fue emitida la resolución del Transparencia para el Pueblo (día/mes/año)</th>
+                                <th>Nota</th>
+                            </tr>
+                        </template>
+                        <template #tbody>
+                            <tr v-for="(row, index) in dataDenuncias" :key="index">
+                                <td>{{ row.no }}</td>
+                                <td>{{ row.anio }}</td>
+                                <td>{{ row.numeroIdentificacion }}</td>
+                                <td>{{ row.objetoDenuncia }}</td>
+                                <td>{{ row.sentidoResolucion }}</td>
+                                <td>{{ row.documentoDenuncia }}</td>
+                                <td>{{ row.fechaResolucion }}</td>
+                                <td>{{ row.nota }}</td>
+                            </tr>
+                        </template>
+                    </TableGray>
                 </div>
 
             </div>

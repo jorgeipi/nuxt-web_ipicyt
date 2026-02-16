@@ -1,8 +1,6 @@
 <script setup>
-// import VideoDirector from '../components/VideoDirector.vue';
 import { useVideo } from "@composables/video/useVideo";
 import { PersonalTipo } from "@shared/constants/personal/personal-tipo";
-// import { PersonalAcademico, PersonalContacto } from "@/modules/personal/components";
 import { usePersonales } from "@shared/composables/personal/usePersonales";
 import { computed } from "vue";
 

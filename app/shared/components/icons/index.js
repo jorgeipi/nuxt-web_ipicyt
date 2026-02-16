@@ -53,7 +53,7 @@ import IconCredencial from './Ipicyt/IconCredencial.vue'
 import IconIPIBUS from './Ipicyt/IconIPIBUS.vue'
 
 // Success
-import IconDivisionServicios from './Success/IconDivisionServicios.vue';
+import SuccessRingIcon from './Success/SuccessRingIcon.vue';
 import IconSuccessFillBlue from './Success/IconSuccessFillBlue.vue';
 
 // Google
@@ -69,6 +69,11 @@ import GraduateIcon from './General/GraduateIcon.vue'
 // Diplomados
 import DAplicacionesIcon from './Diplomados/DAplicacionesIcon.vue'
 import DIArtificialIcon from './Diplomados/DIArtificialIcon.vue'
+
+
+// Research
+import CNSIcon from './Research/CNSIcon.vue';
+import LANBAMAIcon from './Research/LANBAMAIcon.vue';
 
 export{
     IconSearch,
@@ -86,7 +91,7 @@ export{
     ArrowDFGreen,
     IconExpand,
     IconAccesibilidad,
-    IconDivisionServicios,
+    SuccessRingIcon,
     IconGaleria,
     IconDowloadFillWhite,
     IconPhoneFillBlue,
@@ -127,6 +132,10 @@ export{
 
     //General
     GraduateIcon,
+
+    //Research
+    CNSIcon,
+    LANBAMAIcon,
 }
 
 

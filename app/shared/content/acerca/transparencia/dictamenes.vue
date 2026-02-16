@@ -1,8 +1,5 @@
 <script setup lang="ts">
 import { getComiteCodigoPath } from '@shared/helpers/acerca/getPath'
-import { ButtonLink } from '@components/buttons'
-
-import { AccordionLeft } from '@components/accordion'
 import { getDictamenes2025, getDictamenes2024, getDictamenes2023, getDictamenes2022, getDictamenes2021, getDictamenes2020 } from '@shared/helpers/acerca/getPath'
 </script>
 

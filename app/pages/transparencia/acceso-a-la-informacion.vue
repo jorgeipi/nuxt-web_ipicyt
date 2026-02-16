@@ -6,7 +6,7 @@ import { unidadTransparencia, comiteTransparencia, obligacionesTransparencia,
 
 <template>
   <div class="transparencia">
-    <h2 class="mb-8">Transparencia: <span style="font-weight: 400;">Acceso a la Información</span></h2>
+    <h2 class="mb-8">Transparencia: <span class="font-weight-regular">Acceso a la Información</span></h2>
 
     <section class="d-flex flex-column ga-18 mb-18">
         <unidadTransparencia />

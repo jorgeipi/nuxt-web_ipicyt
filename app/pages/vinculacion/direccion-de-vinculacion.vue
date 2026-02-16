@@ -1,8 +1,6 @@
 <script setup>
 import { usePersonales } from '@composables/personal/usePersonales';
 import { VinculacionIcon } from '@components/icons'
-import { ButtonPortal } from '@components/buttons'
-import { PageSkeleton } from '@components/skeleton'
 
 const { personal, personalLoading } = usePersonales([
   { key: 'director', cvedepto: 25, cvepuesto: 108 },
@@ -64,7 +62,7 @@ const vinculacion_list = [
 
     <template v-else>
       <div class="vinculacion">
-        <PageSkeleton />
+        <SkeletonPage />
       </div>
     </template>
   </TransitionGroup>

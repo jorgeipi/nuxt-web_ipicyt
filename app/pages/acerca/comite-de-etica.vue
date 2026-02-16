@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { AccordionRight } from '@components/accordion'
 import { IconMessageFillBlue } from '@components/icons'
 
 import { lineamientos, personasIntegrantes, personasConsejeras, codigo, conflicto, prevencion, informes, micrositio } from '@shared/content/acerca/comiteEtica';

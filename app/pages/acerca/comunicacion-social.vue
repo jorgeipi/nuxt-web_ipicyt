@@ -1,8 +1,6 @@
 <script setup>
-  // import { PersonalAcademico, PersonalContacto } from '@/modules/personal/components'
   import { usePersonales } from '@composables/personal/usePersonales';
-  // import { ListComunicacion } from '../components/list';
-
+  import ListComunicacion from '@shared/content/acerca/comunicacion/ListComunicacion.vue';
 
   const { personal, personalLoading } = usePersonales([
     { key: 'JefaComunicacion', cvepuesto: 610 },
@@ -41,13 +39,13 @@
     </div>
 
       <div class="comunicacion-social__list">
-        <AcercaListComunicacion v-for="area in departmentAreas" :key="area.title">
+        <ListComunicacion v-for="area in departmentAreas" :key="area.title">
           <template #title>{{ area.title }}</template>
           <template #email>
             <span v-if="area.email">{{ area.email }}</span>
             <span v-else v-for="(email, idx) in area.emails" :key="idx">{{ email }}</span>
           </template>
-        </AcercaListComunicacion>
+        </ListComunicacion>
       </div>
 
     <PersonalContacto v-if="!personalLoading && personal.JefaComunicacion" :personal="personal.JefaComunicacion" />

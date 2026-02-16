@@ -1,6 +1,4 @@
 <script setup lang="ts">
-    import { AccordionRight } from '@components/accordion';
-    import { ButtonLink } from '@components/buttons';
     import { getAccesoInfoCalendarioPath } from '@shared/helpers/transparencia/getPath';
 </script>
 

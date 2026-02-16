@@ -1,8 +1,3 @@
-<script setup lang="ts">
-import { AccordionRight } from '@components/accordion';
-import { ButtonLink } from '@components/buttons'
-</script>
-
 <template>
     <AccordionRight id="informeGubernamental">
         <template #title>

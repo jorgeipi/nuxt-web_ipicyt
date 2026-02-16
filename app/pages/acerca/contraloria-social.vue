@@ -1,5 +1,4 @@
 <script setup>
-import { AccordionRight } from '@components/accordion'
 import { apoyos, documentos, material, medios } from '@shared/content/acerca/contraloria'
 </script>
 

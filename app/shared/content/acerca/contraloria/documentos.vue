@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { getContraloriaDocsPath } from '@shared/helpers/acerca/getPath'
-import { ButtonLink } from '@components/buttons'
 </script>
 
 <template>

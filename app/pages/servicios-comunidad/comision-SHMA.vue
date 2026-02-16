@@ -1,7 +1,6 @@
 <script setup>
 // import { useCurricularNavigation } from '@composables/curricular/useCurricular';
 import { usePersonales } from '@composables/personal/usePersonales';
-import { AccordionLeft, AccordionRight } from "@components/accordion";
 
 import { CSHyMArecursos } from "@data/servicios-comunidad/cshyma.js";
 import { miembrosBrigadas, alumnos } from "@data/servicios-comunidad/brigadas.js"
