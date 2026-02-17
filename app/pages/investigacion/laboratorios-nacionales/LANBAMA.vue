@@ -1,6 +1,4 @@
 <script setup>
-import { onMounted } from 'vue';
-
 import { SuccessRingIcon, LANBAMAIcon } from "@shared/components/icons";
 import { usePersonales } from '@composables/personal/usePersonales';
 import lanbamalogo from "/imgs/research/laboratorios-nacionales/LANBAMA-logo.png";
@@ -19,25 +17,28 @@ const { personal, personalLoading } = usePersonales([
 
         <div class="introInfo">
           <img :src="lanbamalogo" alt="LANBAMA logo" />
-          <p class="parrafo">
-            El LANBAMA cuenta con personal calificado y equipo de vanguardia con
-            mantenimiento continuo, para ofrecer servicios a la academia,
-            industria, sector gubernamental y público en general, en las áreas de
-            biotecnología, agrícola, médica y ambiental.
-          </p>
-          <p class="parrafo">
-            <b>Tiene más de 150 clientes</b> de varios estados de la república del
-            sector agrícola, minero, alimentario y académico. Los servicios más
-            solicitados son análisis microbiológicos, fisicoquímicos y de metales
-            pesados de agua y suelo en la sección ambiental y secuenciación de
-            ácidos nucleicos y detección y monitoreo de patógenos en sección
-            molecular
-          </p>
-          <p class="parrafo">
-            Recibió la acreditación de la <b>ema</b> para 2 ensayos de agua y 3 de
-            fitodiagnóstico molecular, así como el reconocimiento del <b>InDRE para
-            diagnóstico de COVID-19.</b>
-          </p>
+
+          <div class="mb-7">
+            <p class="parrafo mb-3">
+              El LANBAMA cuenta con personal calificado y equipo de vanguardia con
+              mantenimiento continuo, para ofrecer servicios a la academia,
+              industria, sector gubernamental y público en general, en las áreas de
+              biotecnología, agrícola, médica y ambiental.
+            </p>
+            <p class="parrafo mb-3">
+              <b>Tiene más de 150 clientes</b> de varios estados de la república del
+              sector agrícola, minero, alimentario y académico. Los servicios más
+              solicitados son análisis microbiológicos, fisicoquímicos y de metales
+              pesados de agua y suelo en la sección ambiental y secuenciación de
+              ácidos nucleicos y detección y monitoreo de patógenos en sección
+              molecular
+            </p>
+            <p class="parrafo">
+              Recibió la acreditación de la <b>ema</b> para 2 ensayos de agua y 3 de
+              fitodiagnóstico molecular, así como el reconocimiento del <b>InDRE para
+              diagnóstico de COVID-19.</b>
+            </p>
+          </div>
 
           <ButtonPortal :href="'https://lanbama.ipicyt.edu.mx/'">
             <LANBAMAIcon />
@@ -187,7 +188,7 @@ const { personal, personalLoading } = usePersonales([
       display: grid;
 
       p {
-        padding: 1rem 0 1rem 0;
+
       }
 
       img {

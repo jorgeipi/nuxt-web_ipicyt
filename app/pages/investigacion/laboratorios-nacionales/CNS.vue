@@ -1,8 +1,4 @@
 <script setup>
-import { onMounted } from 'vue';
-// import ContactoItem from "@ipicyt/components/item/acerca/contactoItem.vue";
-
-
 import { usePersonales } from '@composables/personal/usePersonales';
 import cnslogo from "/imgs/research/laboratorios-nacionales/CNS-logo.png";
 import { CNSIcon, SuccessRingIcon } from '@components/icons';
@@ -24,7 +20,7 @@ const a = {
   <div class="displayCenter container">
     <div class="laboratorio" v-if="!personalLoading">
 
-      <div class="introSeccion">
+      <section class="introSeccion">
         <PersonalAcademico v-if="personal.coordinadorCNS" :personal="personal.coordinadorCNS" />
 
         <div class="introInfo">
@@ -55,11 +51,10 @@ const a = {
             <CNSIcon />
             <p class="ml-5 font-weight-bold">Visita el portal del CNS</p>
           </ButtonPortal>
-
         </div>
-      </div>
+      </section>
 
-      <div>
+      <section>
         <h2 class="mb-5">Servicios del CNS</h2>
         <SectionOverline>
           <template #icon>
@@ -94,7 +89,6 @@ const a = {
             </div>
           </template>
         </SectionOverline>
-
 
         <SectionOverline>
 
@@ -141,11 +135,14 @@ const a = {
             </div>
           </template>
         </SectionOverline>
-      </div>
 
-      <div class="mt-11">
+
+        
+      </section>
+
+      <section class="mt-11">
           <PersonalContacto :personal="a" />
-      </div>
+      </section>
 
     </div>
   </div>

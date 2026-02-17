@@ -74,6 +74,9 @@ import DIArtificialIcon from './Diplomados/DIArtificialIcon.vue'
 // Research
 import CNSIcon from './Research/CNSIcon.vue';
 import LANBAMAIcon from './Research/LANBAMAIcon.vue';
+import LINANIcon from './Research/LINANIcon.vue';
+import GCIIcon from './Research/GCIIcon.vue';
+import ArsenicIcon from './Research/ArsenicIcon.vue';
 
 export{
     IconSearch,
@@ -136,6 +139,9 @@ export{
     //Research
     CNSIcon,
     LANBAMAIcon,
+    LINANIcon,
+    GCIIcon,
+    ArsenicIcon,
 }
 
 
