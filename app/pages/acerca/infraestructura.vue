@@ -1,14 +1,9 @@
 <script setup>
-// import infraestructura from '/imgs/acerca/infraestructura.png';
-// import { setTopImg } from '@shared/helpers/setTopImg';
-// import { PersonalContacto } from '@/modules/personal/components'
 import { usePersonales } from '@composables/personal/usePersonales';
 
 const { personal, personalLoading } = usePersonales([
   { key: 'mantenimiento', cvepuesto: 530},
 ]);
-
-// setTopImg(infraestructura, 'Infraestructura');
 
 const edificios = [
   {
@@ -81,69 +76,79 @@ const infraestructuras = [
   }
 ];
 
-const a = {
-  contacto: 'Lic. Rubén Eduardo Gutiérrez Galicia',
-  mail: 'ruben.gutierrez@ipicyt.edu.mx',
-  puesto: 'Coordinador de Mantenimiento, Obra Pública y Servicios Generales',
-  correo: 'ruben.gutierrez@ipicyt.edu.mx',
-  ext: '7284'
-};
+const { setPageConfig } = usePageConfig()
+setPageConfig({
+  showBanner: true,
+  showMenu: true,
+})
+
+definePageMeta({
+  layout: false,
+}) 
 </script>
 
 <template>
-    <div class="infraestructura" v-if="!personalLoading">
-        <!-- <div class="dto_gral">
+    <NuxtLayout name="main">
+        <template #banner>
+            <LayoutBannerBase image="/imgs/about/infraestructura/infraestructura-header.png">
+            <h1 class="h1-banner">Infraestructura</h1>
+            </LayoutBannerBase>
+        </template>
+
+        <div class="infraestructura" v-if="!personalLoading">
+            <!-- <div class="dto_gral">
+                <h2>Datos Generales</h2>
+            </div> -->
             <h2>Datos Generales</h2>
-        </div> -->
-        <h2>Datos Generales</h2>
-        <div class="dto_gral">
-            <h3><span style="color: #2453f7;">73,542 m²</span></h3>
-            <p>de superficie total de terreno</p>
+            <div class="dto_gral">
+                <h3><span style="color: #2453f7;">73,542 m²</span></h3>
+                <p>de superficie total de terreno</p>
+            </div>
+            <div class="dto_gral">
+                <h3><span style="color: #2453f7;">10 edificios</span></h3>
+                <p>para actividades de investigación, docencia y administrativas</p>
+            </div>
+            <div class="table_content">
+                <h2>Edificios</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Edificio</th>
+                            <th>m² de construcción</th>
+                            <th>m² de terreno</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="(edificio, index) in edificios" :key="index">
+                            <td>{{ edificio.edificio }}</td>
+                            <td>{{ edificio.construccion }}</td>
+                            <td>{{ edificio.terreno }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="table_content">
+                <h2>Infraestructura secundaria</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Área</th>
+                            <th>m² de construcción</th>
+                            <th>m² de terreno</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="(infraestructura, index) in infraestructuras" :key="index">
+                            <td>{{ infraestructura.infraestructura }}</td>
+                            <td>{{ infraestructura.construccion }}</td>
+                            <td>{{ infraestructura.terreno }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <PersonalContacto class="infraestructura__contacto" v-if="personal.mantenimiento" :personal="personal.mantenimiento" />
         </div>
-        <div class="dto_gral">
-            <h3><span style="color: #2453f7;">10 edificios</span></h3>
-            <p>para actividades de investigación, docencia y administrativas</p>
-        </div>
-        <div class="table_content">
-            <h2>Edificios</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Edificio</th>
-                        <th>m² de construcción</th>
-                        <th>m² de terreno</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr v-for="(edificio, index) in edificios" :key="index">
-                        <td>{{ edificio.edificio }}</td>
-                        <td>{{ edificio.construccion }}</td>
-                        <td>{{ edificio.terreno }}</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        <div class="table_content">
-            <h2>Infraestructura secundaria</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Área</th>
-                        <th>m² de construcción</th>
-                        <th>m² de terreno</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr v-for="(infraestructura, index) in infraestructuras" :key="index">
-                        <td>{{ infraestructura.infraestructura }}</td>
-                        <td>{{ infraestructura.construccion }}</td>
-                        <td>{{ infraestructura.terreno }}</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        <PersonalContacto  class="infraestructura__contacto" v-if="personal.mantenimiento" :personal="personal.mantenimiento" />
-    </div>
+    </NuxtLayout>
 </template>
 
 

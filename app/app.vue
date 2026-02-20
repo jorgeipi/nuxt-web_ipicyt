@@ -4,6 +4,7 @@ import { NuxtLayout, NuxtPage } from '#components'
 
 <template>
   <NuxtLayout>
+
     <NuxtPage />
   </NuxtLayout>
 </template>

@@ -21,7 +21,8 @@
   
   /* Azul Principal - Corporativo/Institucional */
   --v-theme-primary: #182654;           /* Tu azul oscuro principal */
-  --v-theme-primary-soft: #2a3a6b;
+  --v-theme-primary-soft: #2a3a6b;      /* Hover/Estados */
+  --v-theme-primary-dark: #05123E;      /* #05123E */
   --v-theme-primary-mute: #3d4d7a;
   
   /* Azul Secundario - Acción/Interactivo (el que usas mucho) */
@@ -112,6 +113,7 @@
   --color-primary: var(--v-theme-primary);
   --color-primary-soft: var(--v-theme-primary-soft);
   --color-primary-mute: var(--v-theme-primary-mute);
+  --color-primary-dark: var(--v-theme-primary-dark);
   
   /* Secondary Colors - Interactivo/CTAs */
   --color-secondary: var(--v-theme-secondary);
@@ -135,6 +137,11 @@
 
   /* Divisiones */
   --color-dca: var(--v-theme-dca);
+
+  /* Footer */
+  --color-footer-green: var(--v-theme-footer-green);
+  --color-footer-red: var(--v-theme-footer-red);
+  --color-footer-brown: var(--v-theme-footer-brown);
   
   /* Layout */
   --section-gap: 160px;

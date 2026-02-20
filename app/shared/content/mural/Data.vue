@@ -1,14 +1,11 @@
 <script setup>
-const basePath = import.meta.env.VITE_IMG_PATH_SOURCE;
-const getImagePath = (imageName) => {
-    return `${basePath}/acerca/mural/${imageName}`;
-};
+import { getMuralPath } from '@shared/helpers/acerca/getPath'
 </script>
 
 <template>
     <section class="mural--boxdata" aria-labelledby="mural-title">
         <figure class="mural--cricket">
-            <img class="mural--cricket_img" :src="getImagePath('cricket.png')" alt="Cricket" />
+            <img class="mural--cricket_img" :src="getMuralPath('cricket.png')" alt="Cricket" />
         </figure>
         <div class="mural--data_boxinfo">
             <div class="mural--data_boxtitle">

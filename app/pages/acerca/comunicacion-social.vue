@@ -1,55 +1,73 @@
 <script setup>
-  import { usePersonales } from '@composables/personal/usePersonales';
-  import ListComunicacion from '@shared/content/acerca/comunicacion/ListComunicacion.vue';
+import { usePersonales } from '@composables/personal/usePersonales';
+import ListComunicacion from '@shared/content/acerca/comunicacion/ListComunicacion.vue';
 
-  const { personal, personalLoading } = usePersonales([
-    { key: 'JefaComunicacion', cvepuesto: 610 },
-  ]);
+const { personal, personalLoading } = usePersonales([
+  { key: 'JefaComunicacion', cvepuesto: 610 },
+]);
 
-  const departmentAreas = [
-    { title: 'Organización de eventos para la divulgación de la ciencia', email: 'rocio.perales@ipicyt.edu.mx' },
-    { title: 'Visitas guiadas', email: 'veronica.gomez@ipicyt.edu.mx' },
-    { title: 'Prensa, divulgación y audiovisuales', email: 'javier.delgado@ipicyt.edu.mx' },
-    { title: 'Administración de redes sociales', email: 'veronica.gomez@ipicyt.edu.mx' },
-    { title: 'Diseño de identidad institucional', emails: ['pedro.gutierrez@ipicyt.edu.mx', 'rebeca.saucedo@ipicyt.edu.mx'] },
-    { title: 'Diseño de interfaces gráficas de usuario', email: 'pedro.gutierrez@ipicyt.edu.mx' },
-  ];
+const departmentAreas = [
+  { title: 'Organización de eventos para la divulgación de la ciencia', email: 'rocio.perales@ipicyt.edu.mx' },
+  { title: 'Visitas guiadas', email: 'veronica.gomez@ipicyt.edu.mx' },
+  { title: 'Prensa, divulgación y audiovisuales', email: 'javier.delgado@ipicyt.edu.mx' },
+  { title: 'Administración de redes sociales', email: 'veronica.gomez@ipicyt.edu.mx' },
+  { title: 'Diseño de identidad institucional', emails: ['pedro.gutierrez@ipicyt.edu.mx', 'rebeca.saucedo@ipicyt.edu.mx'] },
+  { title: 'Diseño de interfaces gráficas de usuario', email: 'pedro.gutierrez@ipicyt.edu.mx' },
+];
+
+const { setPageConfig } = usePageConfig()
+setPageConfig({
+  showBanner: true,
+  showMenu: true,
+})
+
+definePageMeta({
+  layout: false,
+}) 
 </script>
 
 <template>
-  <div class="comunicacion-social" v-if="!personalLoading">
-    <div class="comunicacion-social__header">
-      <PersonalAcademico v-if="personal.JefaComunicacion" :personal="personal.JefaComunicacion" />
+  <NuxtLayout name="main">
+    <template #banner>
+        <LayoutBannerBase image="/imgs/about/comunicacion-social/comunicacion-social-header.png">
+          <h1 class="h1-banner">Comunicación Social</h1>
+        </LayoutBannerBase>
+    </template>
 
-      <div class="comunicacion-social__info">
-        <div class="comunicacion-social__info-text">
-          <h2 class="comunicacion-social__info-title">
-            Funciones del Departamento de Comunicación Social
-          </h2>
-          <p class="comunicacion-social__info-paragraph">
-            Las acciones del Departamento de Comunicación Social ocupan un lugar importante dentro del IPICYT, pues
-            estas actividades son la ventana del Instituto hacia la sociedad
-            a través de una amplia gama de estrategias comunicativas, desde la difusión de noticias científicas hasta la
-            organización de eventos de divulgación, el IPICYT busca llegar a públicos diversos y generar un impacto
-            positivo en la sociedad. Al despertar vocaciones científicas en niños y jóvenes, estamos sembrando las
-            semillas del progreso y garantizando un futuro más próspero para nuestro país.
-          </p>
+    <div class="comunicacion-social" v-if="!personalLoading">
+      <div class="comunicacion-social__header">
+        <PersonalAcademico v-if="personal.JefaComunicacion" :personal="personal.JefaComunicacion" />
+
+        <div class="comunicacion-social__info">
+          <div class="comunicacion-social__info-text">
+            <h2 class="comunicacion-social__info-title">
+              Funciones del Departamento de Comunicación Social
+            </h2>
+            <p class="comunicacion-social__info-paragraph">
+              Las acciones del Departamento de Comunicación Social ocupan un lugar importante dentro del IPICYT, pues
+              estas actividades son la ventana del Instituto hacia la sociedad
+              a través de una amplia gama de estrategias comunicativas, desde la difusión de noticias científicas hasta la
+              organización de eventos de divulgación, el IPICYT busca llegar a públicos diversos y generar un impacto
+              positivo en la sociedad. Al despertar vocaciones científicas en niños y jóvenes, estamos sembrando las
+              semillas del progreso y garantizando un futuro más próspero para nuestro país.
+            </p>
+          </div>
         </div>
       </div>
+
+        <div class="comunicacion-social__list">
+          <ListComunicacion v-for="area in departmentAreas" :key="area.title">
+            <template #title>{{ area.title }}</template>
+            <template #email>
+              <span v-if="area.email">{{ area.email }}</span>
+              <span v-else v-for="(email, idx) in area.emails" :key="idx">{{ email }}</span>
+            </template>
+          </ListComunicacion>
+        </div>
+
+      <PersonalContacto v-if="!personalLoading && personal.JefaComunicacion" :personal="personal.JefaComunicacion" />
     </div>
-
-      <div class="comunicacion-social__list">
-        <ListComunicacion v-for="area in departmentAreas" :key="area.title">
-          <template #title>{{ area.title }}</template>
-          <template #email>
-            <span v-if="area.email">{{ area.email }}</span>
-            <span v-else v-for="(email, idx) in area.emails" :key="idx">{{ email }}</span>
-          </template>
-        </ListComunicacion>
-      </div>
-
-    <PersonalContacto v-if="!personalLoading && personal.JefaComunicacion" :personal="personal.JefaComunicacion" />
-  </div>
+  </NuxtLayout>
 </template>
 
 

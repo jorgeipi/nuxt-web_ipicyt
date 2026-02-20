@@ -1,124 +1,136 @@
 <script setup>
 import { Concepto, BlueTitle, Reconocimientos, Agradecimientos, Banner2, Data, Video } from '@shared/content/mural'
 import { getMuralPath } from '@shared/helpers/acerca/getPath';
+
+definePageMeta({
+  layout: false,
+}) 
 </script>
 
 <template>
-    <div class="acerca--mural">
-        <main class="mural--main">
-            <section class="mural--intro" aria-labelledby="titulo-intro">
-                <div class="mural--content">
-                    <p class="mural--content_info">
-                        <strong>El Mural IPICYT:</strong> Ciencia, Tecnología y Sociedad, nace del interés de los
-                        académicos y administrativos del Instituto por plasmar de manera artística y monumental el papel
-                        de la ciencia en la comunidad y a partir de la visión de los artistas de México.
-                        <br /><br />
-                        Una convocatoria publicada en Noviembre de 2024 reunió 51 propuestas de 14 estados de la
-                        república mexicana, de las cuales se eligió a un ganador.
-                    </p>
-                </div>
-            </section>
+    <NuxtLayout name="default">
+        <template #banner>
+            <LayoutBannerBase image="/imgs/about/mural/mural-header.png" height="230px">
+                <h1 class="h1-banner">Mural IPICYT: <span class="font-weight-regular">Ciencia, Tecnología y Sociedad</span></h1>
+            </LayoutBannerBase>
+        </template>
 
-            <section class="mural--data">
-                <Banner2 />
-                <div class="mural--metadata">
-                    <Data />
-                    <Video />
-                </div>
-            </section>
+        <div class="acerca--mural">
+            <main class="mural--main">
+                <section class="mural--intro" aria-labelledby="titulo-intro">
+                    <div class="mural--content">
+                        <p class="mural--content_info">
+                            <strong>El Mural IPICYT:</strong> Ciencia, Tecnología y Sociedad, nace del interés de los
+                            académicos y administrativos del Instituto por plasmar de manera artística y monumental el papel
+                            de la ciencia en la comunidad y a partir de la visión de los artistas de México.
+                            <br /><br />
+                            Una convocatoria publicada en Noviembre de 2024 reunió 51 propuestas de 14 estados de la
+                            república mexicana, de las cuales se eligió a un ganador.
+                        </p>
+                    </div>
+                </section>
 
-            <section class="mural--mean">
-                <div class="mural--mean_boxtitle">
-                    <BlueTitle>Significado y composición</BlueTitle>
+                <section class="mural--data">
+                    <Banner2 />
+                    <div class="mural--metadata">
+                        <Data />
+                        <Video />
+                    </div>
+                </section>
 
-                    <p>Una obra que refleja la esencia del instituto y su visión a futuro.
-                        <br /><strong>“Rich Arnauda”</strong>
-                    </p>
-                </div>
+                <section class="mural--mean">
+                    <div class="mural--mean_boxtitle">
+                        <BlueTitle>Significado y composición</BlueTitle>
 
-                <div class="mural--mean_conceptos">
-                    <Concepto :img="getMuralPath('concepto1.png')">
-                        El mural se inspira en los trazos del logotipo conmemorativo de los 25 años del IPICYT.
-                    </Concepto>
-                    <Concepto :img="getMuralPath('concepto2.png')">
-                        <strong>En su parte superior, un monolito o calendario simboliza la fuerza perdurable de nuestras culturas ancestrales.</strong> Desde una esfera central surge el movimiento visual que conecta toda la composición.
-                    </Concepto>
-                    <Concepto :img="getMuralPath('concepto3.png')">
-                        <strong>Cinco figuras humanas representan las áreas de investigación del Instituto y, a la vez, la diversidad de la humanidad en género, cultura e ideología.</strong> A su alrededor flotan planetas, minerales, células y átomos, reflejando la conexión constante entre el conocimiento y el universo.
-                    </Concepto>
-                    <Concepto :img="getMuralPath('concepto4.png')" class="withouthr">
-                        Las figuras emergen de los cuatro elementos <strong>—Aire, Agua, Tierra y Fuego—</strong> representados en un estilo gráfico prehispánico que alude a la totalidad del cosmos y a la armonía entre ciencia, naturaleza y espíritu.
-                    </Concepto>
-                </div>
-            </section>
-
-            <section class="mural--trayectoria">
-                <BlueTitle class="mural--trayectoria_title">¿Quién es <strong>Rich Arnauda ?</strong></BlueTitle>
-
-                <div class="mural--biografia">
-                    <div class="mural--biografia_content">
-                        <h3 class="mural--biografia_content-title">Artista Plástico de 30 años de trayectoria</h3>
-                        <p class="mural--biografia_content-info">
-                            Estudió artes en el CEDART del Instituto Nacional de Bellas Artes de México y más adelante
-                            tomó cursos y clases privadas con reconocidos maestros en artes plásticas, dibujo, pintura,
-                            acuarela, trencadis, historia del arte, bioconstrucción, etc. <strong>En 2008, con su primer
-                                exposición en Barcelona inicia de manera profesional su carrera como pintor.</strong>
-                            Actualmente es
-                            también escultor y muralista. Desde entonces ha expuesto su trabajo en <strong>México,
-                                Barcelona,
-                                Suiza, Bélgica, Eslovenia, Nueva York, Austria,</strong> y realizado obra pública
-                            (murales, fuentes,
-                            pisos y esculturas) en los estados de Morelos, Estado de México, Puebla, Michoacán y CDMX.
+                        <p>Una obra que refleja la esencia del instituto y su visión a futuro.
+                            <br /><strong>“Rich Arnauda”</strong>
                         </p>
                     </div>
 
-                    <div class="mural--biografia_boximg">
-                        <img class="mural--biografia_img" :src="getMuralPath('rich.png')" alt="">
+                    <div class="mural--mean_conceptos">
+                        <Concepto :img="getMuralPath('concepto1.png')">
+                            El mural se inspira en los trazos del logotipo conmemorativo de los 25 años del IPICYT.
+                        </Concepto>
+                        <Concepto :img="getMuralPath('concepto2.png')">
+                            <strong>En su parte superior, un monolito o calendario simboliza la fuerza perdurable de nuestras culturas ancestrales.</strong> Desde una esfera central surge el movimiento visual que conecta toda la composición.
+                        </Concepto>
+                        <Concepto :img="getMuralPath('concepto3.png')">
+                            <strong>Cinco figuras humanas representan las áreas de investigación del Instituto y, a la vez, la diversidad de la humanidad en género, cultura e ideología.</strong> A su alrededor flotan planetas, minerales, células y átomos, reflejando la conexión constante entre el conocimiento y el universo.
+                        </Concepto>
+                        <Concepto :img="getMuralPath('concepto4.png')" class="withouthr">
+                            Las figuras emergen de los cuatro elementos <strong>—Aire, Agua, Tierra y Fuego—</strong> representados en un estilo gráfico prehispánico que alude a la totalidad del cosmos y a la armonía entre ciencia, naturaleza y espíritu.
+                        </Concepto>
                     </div>
-                </div>
+                </section>
 
-                <Reconocimientos />
-            </section>
+                <section class="mural--trayectoria">
+                    <BlueTitle class="mural--trayectoria_title">¿Quién es <strong>Rich Arnauda ?</strong></BlueTitle>
 
-            <section class="mural--patrocinadores">
-                <!-- JDRM -->
-                <BlueTitle class="mural--patrocinadores-title">Patrocinadores</BlueTitle>
+                    <div class="mural--biografia">
+                        <div class="mural--biografia_content">
+                            <h3 class="mural--biografia_content-title">Artista Plástico de 30 años de trayectoria</h3>
+                            <p class="mural--biografia_content-info">
+                                Estudió artes en el CEDART del Instituto Nacional de Bellas Artes de México y más adelante
+                                tomó cursos y clases privadas con reconocidos maestros en artes plásticas, dibujo, pintura,
+                                acuarela, trencadis, historia del arte, bioconstrucción, etc. <strong>En 2008, con su primer
+                                    exposición en Barcelona inicia de manera profesional su carrera como pintor.</strong>
+                                Actualmente es
+                                también escultor y muralista. Desde entonces ha expuesto su trabajo en <strong>México,
+                                    Barcelona,
+                                    Suiza, Bélgica, Eslovenia, Nueva York, Austria,</strong> y realizado obra pública
+                                (murales, fuentes,
+                                pisos y esculturas) en los estados de Morelos, Estado de México, Puebla, Michoacán y CDMX.
+                            </p>
+                        </div>
 
-                <div class="mural--patrocinadores-fleximgs">
-                    <div class="mural--patrocinadores-boximg">
-                        <img class="mural--patrocinadores-img" :src="getMuralPath('mural_patrocinadores.svg')"
-                            alt="Logotipos de los patrocinadores del mural IPICYT: Ciencia, Tecnología y Sociedad" />
+                        <div class="mural--biografia_boximg">
+                            <img class="mural--biografia_img" :src="getMuralPath('rich.png')" alt="">
+                        </div>
                     </div>
-                    <div class="mural--patrocinadores-boximg">
-                        <img class="mural--patrocinadores-img" :src="getMuralPath('mural_patrocinadores2.svg')"
-                            alt="Logotipos de los patrocinadores del mural IPICYT: Ciencia, Tecnología y Sociedad" />
-                    </div>
-                    <br></br>
-                    <div class="mural--patrocinadores-boximg">
-                        <img class="mural--patrocinadores-img" :src="getMuralPath('mural_patrocinador-ormart.svg')"
-                            alt="Logotipos de los patrocinadores del mural IPICYT: Ciencia, Tecnología y Sociedad" />
-                    </div>
-                    <div class="mural--patrocinadores-boximg">
-                        <img class="mural--patrocinadores-img" :src="getMuralPath('mural_patrocinador-ac-solutions.svg')"
-                            alt="Logotipos de los patrocinadores del mural IPICYT: Ciencia, Tecnología y Sociedad" />
-                    </div>
-                    <div class="mural--patrocinadores-boximg">
-                        <img class="mural--patrocinadores-img" :src="getMuralPath('mural_patrocinador-ascade.svg')"
-                            alt="Logotipos de los patrocinadores del mural IPICYT: Ciencia, Tecnología y Sociedad" />
-                    </div>
-                </div>
 
-            </section>
+                    <Reconocimientos />
+                </section>
 
-            <section class="mural--agradecimientos">
-                <BlueTitle class="mural--agradecimientos_title"><strong>Gracias a toda la comunidad de trabajadores,
-                        estudiantes y egresados que han cooperado con su donativo</strong> (aparición por orden
-                    alfabético)</BlueTitle>
+                <section class="mural--patrocinadores">
+                    <!-- JDRM -->
+                    <BlueTitle class="mural--patrocinadores-title">Patrocinadores</BlueTitle>
 
-                <Agradecimientos />
-            </section>
-        </main>
-    </div>
+                    <div class="mural--patrocinadores-fleximgs">
+                        <div class="mural--patrocinadores-boximg">
+                            <img class="mural--patrocinadores-img" :src="getMuralPath('mural_patrocinadores.svg')"
+                                alt="Logotipos de los patrocinadores del mural IPICYT: Ciencia, Tecnología y Sociedad" />
+                        </div>
+                        <div class="mural--patrocinadores-boximg">
+                            <img class="mural--patrocinadores-img" :src="getMuralPath('mural_patrocinadores2.svg')"
+                                alt="Logotipos de los patrocinadores del mural IPICYT: Ciencia, Tecnología y Sociedad" />
+                        </div>
+                        <br></br>
+                        <div class="mural--patrocinadores-boximg">
+                            <img class="mural--patrocinadores-img" :src="getMuralPath('mural_patrocinador-ormart.svg')"
+                                alt="Logotipos de los patrocinadores del mural IPICYT: Ciencia, Tecnología y Sociedad" />
+                        </div>
+                        <div class="mural--patrocinadores-boximg">
+                            <img class="mural--patrocinadores-img" :src="getMuralPath('mural_patrocinador-ac-solutions.svg')"
+                                alt="Logotipos de los patrocinadores del mural IPICYT: Ciencia, Tecnología y Sociedad" />
+                        </div>
+                        <div class="mural--patrocinadores-boximg">
+                            <img class="mural--patrocinadores-img" :src="getMuralPath('mural_patrocinador-ascade.svg')"
+                                alt="Logotipos de los patrocinadores del mural IPICYT: Ciencia, Tecnología y Sociedad" />
+                        </div>
+                    </div>
+
+                </section>
+
+                <section class="mural--agradecimientos">
+                    <BlueTitle class="mural--agradecimientos_title"><strong>Gracias a toda la comunidad de trabajadores,
+                            estudiantes y egresados que han cooperado con su donativo</strong> (aparición por orden
+                        alfabético)</BlueTitle>
+
+                    <Agradecimientos />
+                </section>
+            </main>
+        </div>
+    </NuxtLayout>
 </template>
 
 <style lang="scss">

@@ -1,7 +1,9 @@
 <script setup>
 import { onMounted, ref, computed } from 'vue';
 import { fetchPersonal } from '@shared/helpers/personal/fetchPersonal';
-import PageSkeleton from '@components/skeleton/PageSkeleton.vue'
+
+const { isMobile } = useScreenResponsive()
+const { setPageConfig } = usePageConfig()
 
 const personal = ref(null);
 const loading = ref(false);
@@ -32,50 +34,68 @@ const personalOrdenado = computed(() => {
     .map(cve => personalArray.find(p => p.cvepersonal == cve))
     .filter(Boolean);
 });
+
+setPageConfig({
+  showBanner: true,
+  showMenu: true,
+})
+
+definePageMeta({
+  layout: false,
+}) 
 </script>
 
 <template>
-    <div class="oic--estructura">
-        <main class="estructura--main">
+    <NuxtLayout name="main">
+        <template #banner>
+            <LayoutBannerBase image="/imgs/oic/denuncias/oic-header.png" height="230px" maxHeight="230px">
+                <h1 v-if="isMobile" class="h1-banner">OIC-SECHITI<br><span class="font-weight-light text-h2">Órgano Interno de Control en la Secretaría de Ciencia, Humanidades, Tecnología e Innovación</span></h1>
+                <h1 v-else class="h1-banner">Órgano Interno de Control en la Secretaría de Ciencia, Humanidades, Tecnología e Innovación <br><span class="font-weight-light text-h2">Órgano Interno de Control en la Secretaría de Ciencia, Humanidades, Tecnología e Innovación</span></h1>
+            </LayoutBannerBase>
+        </template>
 
-            <TransitionGroup name="fade">
-              <template v-if="loading">
-                <PageSkeleton />
-              </template>
+        <div class="oic--estructura">
+            <main class="estructura--main">
 
-              <template v-else-if="personal && typeof personal === 'object' && Object.keys(personal).length">
-                <section class="estructura--intro">
-                    <h2 id="titulo-intro" class="inicio--title">
-                        Estructura Orgánica
-                    </h2>
+                <TransitionGroup name="fade">
+                <template v-if="loading">
+                    <SkeletonPage />
+                </template>
 
-                    <p>Estructura Orgánica y ocupacional para el Órgano Interno de Control en el Instituto Potosino de
-                        Investigación Cientifica y Tecnologica A.C. (IPICYT).
-                    </p>
-                </section>
+                <template v-else-if="personal && typeof personal === 'object' && Object.keys(personal).length">
+                    <section class="estructura--intro">
+                        <h2 id="titulo-intro" class="inicio--title">
+                            Estructura Orgánica
+                        </h2>
 
-                <section class="estructura--personal">
-                    <div class="estructura--persona_box"
-                        v-if="personal && typeof personal === 'object' && Object.keys(personal).length">
-                        <PersonalHorizontal v-for="persona in personalOrdenado" :key="persona.cvepersonal" :persona="persona" />
-                    </div>
-                </section>
-              </template>
+                        <p>Estructura Orgánica y ocupacional para el Órgano Interno de Control en el Instituto Potosino de
+                            Investigación Cientifica y Tecnologica A.C. (IPICYT).
+                        </p>
+                    </section>
 
-              <template v-else>
-                  <section class="estructura--intro">
-                    <h1 id="titulo-intro" class="inicio--title">
-                        Estructura Orgánica
-                    </h1>
+                    <section class="estructura--personal">
+                        <div class="estructura--persona_box"
+                            v-if="personal && typeof personal === 'object' && Object.keys(personal).length">
+                            <PersonalHorizontal v-for="persona in personalOrdenado" :key="persona.cvepersonal" :persona="persona" />
+                        </div>
+                    </section>
+                </template>
 
-                    <p>Estructura Orgánica y ocupacional para el Órgano Interno de Control en el Instituto Potosino de
-                        Investigación Cientifica y Tecnologica A.C. (IPICYT).
-                    </p>
-                </section>
-              </template>
-            </TransitionGroup>
-        </main>
-    </div>
+                <template v-else>
+                    <section class="estructura--intro">
+                        <h1 id="titulo-intro" class="inicio--title">
+                            Estructura Orgánica
+                        </h1>
+
+                        <p>Estructura Orgánica y ocupacional para el Órgano Interno de Control en el Instituto Potosino de
+                            Investigación Cientifica y Tecnologica A.C. (IPICYT).
+                        </p>
+                    </section>
+                </template>
+                </TransitionGroup>
+            </main>
+        </div>
+    </NuxtLayout>
 </template>
 
 <style lang="scss" scoped>

@@ -1,49 +1,68 @@
 <script setup>
 import { apoyos, documentos, material, medios } from '@shared/content/acerca/contraloria'
+
+const { setPageConfig } = usePageConfig()
+setPageConfig({
+  showBanner: true,
+  showMenu: true,
+})
+
+definePageMeta({
+  layout: false,
+}) 
 </script>
 
 <template>
-  <div class="contraloria-social">
-    <div class="contraloria-social__acordeones d-flex flex-column ga-7 pb-7">
-      <AccordionRight id="documentos">
-        <template #title>
-          <h3>Documentos Normativos</h3>
-        </template>
-        <template #content>
-          <documentos />
-        </template>
-      </AccordionRight>
+  <NuxtLayout name="main">
+    <template #banner>
+        <LayoutBannerBase image="/imgs/about/contraloria-social/contraloria-social-header.png">
+            <h1 class="h1-banner">Contraloría Social</h1>
+        </LayoutBannerBase>
+    </template>
 
-      <AccordionRight id="apoyos">
-        <template #title>
-          <h3>Apoyos Vigilados</h3>
-        </template>
-        <template #content>
-          <apoyos />
-        </template>
-      </AccordionRight>
+    <div class="contraloria-social">
+      <div class="contraloria-social__acordeones d-flex flex-column ga-7 pb-7">
+        <AccordionRight id="documentos">
+          <template #title>
+            <h3>Documentos Normativos</h3>
+          </template>
+          <template #content>
+            <documentos />
+          </template>
+        </AccordionRight>
 
-
-      <AccordionRight id="material">
-        <template #title>
-          <h3>Material de Difusión</h3>
-        </template>
-        <template #content>
-          <material />
-        </template>
-      </AccordionRight>
+        <AccordionRight id="apoyos">
+          <template #title>
+            <h3>Apoyos Vigilados</h3>
+          </template>
+          <template #content>
+            <apoyos />
+          </template>
+        </AccordionRight>
 
 
-      <AccordionRight id="medios">
-        <template #title>
-          <h3>Medios para quejas y denuncias de la Contraloría Social</h3>
-        </template>
-        <template #content>
-          <medios />
-        </template>
-      </AccordionRight>
+        <AccordionRight id="material">
+          <template #title>
+            <h3>Material de Difusión</h3>
+          </template>
+          <template #content>
+            <material />
+          </template>
+        </AccordionRight>
+
+
+        <AccordionRight id="medios">
+          <template #title>
+            <h3>Medios para quejas y denuncias de la Contraloría Social</h3>
+          </template>
+          <template #content>
+            <medios />
+          </template>
+        </AccordionRight>
+      </div>
     </div>
-  </div>
+
+  </NuxtLayout>
 </template>
 
 <style lang="scss" scoped>

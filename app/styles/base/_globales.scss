@@ -1,8 +1,20 @@
 @use './variables' as v;
 
+:root {
+  --header-inferior-height: 70px;
+  --breadcrumb-height: 40px;
+  --sticky-offset: calc(var(--header-inferior-height) + var(--breadcrumb-height));
+}
+
 html {
     font-size: 62.5%;
     box-sizing: border-box;
+
+    scroll-behavior: smooth;
+}
+
+* {
+  scroll-margin-top: var(--sticky-offset);
 }
 
 *,
@@ -21,18 +33,6 @@ body {
     margin: 0rem;
     padding: 0rem;
 
-    //* Fuentes
-    // font-family: v.$body-font-family;
-    // // font-weight: v.$regular;
-    // font-size: 1.5rem;
-    // color: var(--v-theme-primary);
-    // text-align: start;
-
-    //* Background
-    // background-color: v.$white;
-    // line-height: 2.2rem;
-    // overflow-x: hidden;
-
     h1,
     h2,
     h3,
@@ -50,115 +50,8 @@ body {
     }
 }
 
-// main {
-
-    // h1,
-    // h2,
-    // h3,
-    // h4,
-    // h5,
-    // h6 {
-    //     padding: 0rem;
-    //     margin: 0rem;
-    // }
-
-
-//     h1 {
-//         // color: v.$white;
-        
-//     }
-
-//     h2 {
-//         // color: v.$black;
-//     }
-
-//     h3 {
-//         color: #182654;
-//     }
-
-//     h4 {
-//         // color: v.$white;
-//     }
-
-//     h5 {
-//         color: #2453f7;
-//     }
-
-//     h6 {
-//         // color: v.$black;
-//     }
-
-    // p {
-    //     // color: v.$black;
-    //     margin: 0;
-    //     padding: 0rem;
-    // }
-
-//     a {
-//         text-decoration: none;
-//         // color: v.$dark-blue;
-//         font-size: 1.5rem;
-
-//         &:hover,
-//         &:active,
-//         &:focus {
-//             text-decoration: none;
-//             // color: v.$black;
-//         }
-//     }
-// }
-
-
-// h1 {
-//     font-size: 4.2rem;
-//     line-height: 5.2rem;
-// }
-
-// h2 {
-//     font-size: 2.6rem;
-//     line-height: 32px;
-// }
-
-// h3 {
-//     font-size: 2.2rem;
-// }
-
-// h4 {
-//     font-size: 1.6rem;
-
-//     a {
-//         font-size: 1.6rem;
-//     }
-// }
-
-// h5 {
-//     font-size: 1.5rem;
-// }
-
-// h6 {
-//     font-size: 1.2rem;
-// }
-
-// p {
-//     // font-family: v.$primaryFont;
-//     font-size: 1.5rem;
-// }
-
-// ul {
-//     padding-left: 2%;
-// }
-
-
-// .contraste_filter {
-//     filter: invert(1);
-//     -webkit-filter: invert(1);
-// }
-
-// strong {
-//     font-weight: 700;
-// }
-
-// [type="checkbox"]:checked,
-// [type="radio"]:checked {
-//     background-color: v.$strong-blue !important;
-// }
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}

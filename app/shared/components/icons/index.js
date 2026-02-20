@@ -77,6 +77,10 @@ import LANBAMAIcon from './Research/LANBAMAIcon.vue';
 import LINANIcon from './Research/LINANIcon.vue';
 import GCIIcon from './Research/GCIIcon.vue';
 import ArsenicIcon from './Research/ArsenicIcon.vue';
+import RISZAIcon from './Research/RISZAIcon.vue';
+
+//Posgrado
+import MCAIcon from './Posgrado/MCA/MCAIcon.vue'
 
 export{
     IconSearch,
@@ -142,6 +146,10 @@ export{
     LINANIcon,
     GCIIcon,
     ArsenicIcon,
+    RISZAIcon,
+
+    //Posgrado
+    MCAIcon,
 }
 
 

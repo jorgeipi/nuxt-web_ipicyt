@@ -1,24 +1,47 @@
 <script setup>
 import { usePersonales } from '@composables/personal/usePersonales';
 import { SuccessRingIcon, LINANIcon } from "@shared/components/icons";
-import linanlogo from "/imgs/research/laboratorios-nacionales/LINAN-logo.png";
+import linanlogo from "/imgs/research/laboratorios-nacionales/LINAN/LINAN-logo.png";
 
 const { personal, personalLoading } = usePersonales([
   { key: 'coordinadorLINAN', cvepuesto: 602},
 ]);
+
+const { setPageConfig } = usePageConfig()
+setPageConfig({
+  showBanner: true,
+})
+
+definePageMeta({
+  layout: false,
+})
 </script>
 
 <template>
-  <div class="displayCenter container">
-    <div class="laboratorio" v-if="!personalLoading">
+  <NuxtLayout name="main">
+      <template #banner>
+        <LayoutBannerBase
+          image="/imgs/research/laboratorios-nacionales/LINAN/LINAN-banner.png"
+          height="200px"
+          variant="centered"
+        >
+          <div>
+            <h1 class="h1-banner">Laboratorio Nacional de Investigaciones en Nanociencias y Nanotecnología (LINAN)</h1>
+          </div>
+          <!-- <BannerTitle>Investigación en IPICYT</BannerTitle>
+          <BannerText>Innovación y ciencia de clase mundial</BannerText> -->
+        </LayoutBannerBase>
+      </template>
 
-      <section class="introSeccion">
+    <div class="research-laboratory" v-if="!personalLoading">
+
+      <section class="research-laboratory__intro mb-12">
         <PersonalAcademico v-if="personal.coordinadorLINAN" :personal="personal.coordinadorLINAN" />
 
-        <div class="introInfo">
-          <img :src="linanlogo" alt="linan_logo"/>
+        <div class="research-laboratory__intro--info">
+          <img class="research-laboratory__logo mb-8" :src="linanlogo" alt="linan_logo"/>
 
-          <div class="mb-7">
+          <div class="mb-8">
             <p class="parrafo">
               El Laboratorio Nacional de Investigaciones en Nanociencias y
               Nanotecnología es un laboratorio interinstitucional que ofrece
@@ -49,11 +72,11 @@ const { personal, personalLoading } = usePersonales([
         </div>
       </section>
 
-      <section>
+      <section class="research-laboratory__acordiones">
         <h2 class="mb-5">Servicios del LINAN</h2>
         <SectionOverline>
           <template #icon>
-            <SuccessRingIcon class="icon" />
+            <SuccessRingIcon class="icon color-secondary" />
           </template>
 
           <template #content>
@@ -66,7 +89,7 @@ const { personal, personalLoading } = usePersonales([
 
         <SectionOverline>
           <template #icon>
-            <SuccessRingIcon class="icon" />
+            <SuccessRingIcon class="icon color-secondary" />
           </template>
 
           <template #content>
@@ -79,7 +102,7 @@ const { personal, personalLoading } = usePersonales([
 
         <SectionOverline>
           <template #icon>
-            <SuccessRingIcon class="icon" />
+            <SuccessRingIcon class="icon color-secondary" />
           </template>
 
           <template #content>
@@ -92,7 +115,7 @@ const { personal, personalLoading } = usePersonales([
 
         <SectionOverline>
           <template #icon>
-            <SuccessRingIcon class="icon" />
+            <SuccessRingIcon class="icon color-secondary" />
           </template>
 
           <template #content>
@@ -105,7 +128,7 @@ const { personal, personalLoading } = usePersonales([
 
         <SectionOverline>
           <template #icon>
-            <SuccessRingIcon class="icon" />
+            <SuccessRingIcon class="icon color-secondary" />
           </template>
 
           <template #content>
@@ -118,7 +141,7 @@ const { personal, personalLoading } = usePersonales([
 
         <SectionOverline>
           <template #icon>
-            <SuccessRingIcon class="icon" />
+            <SuccessRingIcon class="icon color-secondary" />
           </template>
 
           <template #content>
@@ -131,7 +154,7 @@ const { personal, personalLoading } = usePersonales([
 
         <SectionOverline>
           <template #icon>
-            <SuccessRingIcon class="icon" />
+            <SuccessRingIcon class="icon color-secondary" />
           </template>
 
           <template #content>
@@ -144,7 +167,7 @@ const { personal, personalLoading } = usePersonales([
 
         <SectionOverline>
           <template #icon>
-            <SuccessRingIcon class="icon" />
+            <SuccessRingIcon class="icon color-secondary" />
           </template>
 
           <template #content>
@@ -156,120 +179,38 @@ const { personal, personalLoading } = usePersonales([
         </SectionOverline>
       </section>
 
-      <section class="laboratorio_contacto">
+      <section class="research-laboratory__contacto mt-12">
         <PersonalContacto v-if="personal.coordinadorLINAN" :personal="personal.coordinadorLINAN" />
       </section>
 
     </div>
-  </div>
+  </NuxtLayout>
 </template>
-
 
 <style lang="scss" scoped>
 @use '@/styles/base/mixins' as m;
 
-.icon {
-  color: var(--color-secondary);
-}
-
-.laboratorio {
-  display: block;
-  padding: 2rem;
-  max-width: 790px;
-
-  margin-bottom: 6rem;
-
-  @include m.mobile {
-    padding: 0%;
-  }
-
-  h3 {
-    color: var(--color-black);
-    padding: 2rem 0 2rem 0;
-  }
-
-  h4 {
-    color: var(--color-secondary);
-    font-size: 2.2rem;
-    line-height: 28px;
-    padding: 1.5rem 0 1.5rem 0;
-  }
-
-  .contactoItem,
-  .text-persona {
-    p {
-      padding: 0%;
-    }
-  }
-
-  .contactoItem {
-    margin: 0;
-  }
-
-  .parrafo {
-    // padding: 1.5rem 0 1rem 0;
-    // line-height: 24px;
-  }
-
-  .servicios {
-    border-bottom: 1px solid var(--color-black);
-  }
-
-  .introSeccion {
-    display: flex;
-    margin-bottom: 5rem;
-
-    @include m.tablet {
-      flex-direction: column;
-    }
-
-    .introInfo {
-      padding-left: 3rem;
-      max-width: 582px;
-      display: grid;
-
-      p {
-
-      }
-
-      img {
-        margin-bottom: 3rem;
-      }
-
-      .portal {
-        text-decoration: underline;
-      }
-
-      .btn_portal {
-        img {
-          margin: 0;
+.research-laboratory {
+    max-width: 790px;
+    &__intro {
+        display: flex;
+        @include m.tablet {
+            flex-direction: column;
         }
-      }
-
-      @include m.mobile {
-        padding-left: 0%;
-        padding-top: 2rem;
-
-        img {
-          max-width: 300px;
+        &--info {
+            margin-left: 3.2rem;
+            @include m.tablet {
+                margin-left: 0rem;
+            }
         }
-      }
     }
-  }
 
-  .borderbottom {
-    border-bottom: 1px solid var(--color-black);
-    padding-bottom: 2rem;
-  }
-
-  .laboratorio_contacto {
-    margin-top: 4.5rem;
-
-    display: flex;
-    flex-direction: column;
-
-    gap: 4.5rem
-  }
-
+    &__logo {
+        max-width: 100%;
+        min-height: 110px;
+        height: auto;
+        display: block;
+        object-fit: contain;
+    }
 }
 </style>

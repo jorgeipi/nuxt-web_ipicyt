@@ -1,25 +1,46 @@
 <script setup>
-import { EyeIcon } from "@components/Icons"
+import { EyeIcon } from "@components/icons"
+
+const { setPageConfig } = usePageConfig()
+setPageConfig({
+  showBanner: true,
+  showMenu: true,
+  menuItems: [
+    { label: 'Protección de Datos personales', to: '/proteccion-de-datos-personales/bienvenida', order: 2 }
+  ],
+})
+
+definePageMeta({
+  layout: false,
+}) 
 </script>
 
 <template>
-    <div class="gobierno-abierto">
-        <h2 class="mb-8">Transparencia: <span class="font-weight-regular">Gobierno Abierto</span></h2>
+    <NuxtLayout name="main">
+        <template #banner>
+            <LayoutBannerBase image="/imgs/transparencia/acceso-informacion/acceso-informacion-header.png">
+            <h1 class="h1-banner">Transparencia: <span class="font-weight-regular">Acceso a la información</span></h1>
+            </LayoutBannerBase>
+        </template>
+        
+        <div class="gobierno-abierto">
+            <h2 class="mb-8">Transparencia: <span class="font-weight-regular">Gobierno Abierto</span></h2>
 
-        <div class="gobierno-abierto__content">
-            <EyeIcon class="gobierno-abierto__icon" />
-            <div>
-                <p>El Instituto Potosino de Investigación Científica y Tecnológica, A.C. (IPICYT), no se encuentra
-                    dentro del Plan de Acción de la Alianza para el Gobierno Abierto (AGA).</p>
-                <p>La acción no aplica en tanto que la Institución no ha adquirido compromisos en el contexto de la AGA
-                    (<a href="https://portal-transparencia.funcionpublica.gob.mx/gobierno-abierto/mexico-en-la-%20alianza-para-el-gobierno-abierto/"
-                        class="color-secondary link">México en la AGA</a>)</p>
+            <div class="gobierno-abierto__content">
+                <EyeIcon class="gobierno-abierto__icon" />
+                <div>
+                    <p>El Instituto Potosino de Investigación Científica y Tecnológica, A.C. (IPICYT), no se encuentra
+                        dentro del Plan de Acción de la Alianza para el Gobierno Abierto (AGA).</p>
+                    <p>La acción no aplica en tanto que la Institución no ha adquirido compromisos en el contexto de la AGA
+                        (<a href="https://portal-transparencia.funcionpublica.gob.mx/gobierno-abierto/mexico-en-la-%20alianza-para-el-gobierno-abierto/"
+                            class="color-secondary link">México en la AGA</a>)</p>
+                </div>
+            </div>
+            <div class="gobierno-abierto__date">
+                <p>Fecha última actualización: 08 de Julio de 2024</p>
             </div>
         </div>
-        <div class="gobierno-abierto__date">
-            <p>Fecha última actualización: 08 de Julio de 2024</p>
-        </div>
-    </div>
+    </NuxtLayout>
 </template>
 
 <style lang="scss" scoped>

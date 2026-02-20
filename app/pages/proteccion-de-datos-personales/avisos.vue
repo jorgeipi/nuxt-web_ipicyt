@@ -1,33 +1,51 @@
 <script setup lang="ts">
 import { avisos } from '@data/proteccion-de-datos/avisos';
 import { getDatosAvisosPath } from '@shared/helpers/proteccion-de-datos/getPath'
+
+const { setPageConfig } = usePageConfig()
+setPageConfig({
+  showBanner: true,
+  showMenu: true,
+})
+
+definePageMeta({
+  layout: false,
+}) 
 </script>
 
 <template>
-  <div class="dp-avisos"> 
-    <h2 class="dp-avisos__title">
-      Protección de Datos Personales:
-      <span class="dp-avisos__title-subtitle">Avisos de Privacidad Integrales</span>
-    </h2>
-    
-    <div class="dp-avisos__intro">
-      <p class="dp-avisos__intro-text">
-        Hacemos de su conocimiento que eI Instituto Potosino de Investigación
-        Científica y Tecnológica, A.C., con motivo de respetar, proteger y
-        garantizar el derecho humano a la autodeterminación informativa, ha
-        desarrollado una Política de Privacidad la cual ponemos a su disposición
-        en las siguientes ligas:
-      </p>
-    </div>
-    
-    <div class="dp-avisos__buttons d-flex flex-column ga-5">
-      <div v-for="(item, index) in avisos" :key="index">
-        <ButtonLink class="dp-avisos__button justify-start align-start" :href="getDatosAvisosPath(item.file)" color="var(--color-text-subtle)">
-            {{ item.title }}
-        </ButtonLink>
+  <NuxtLayout name="main">
+    <template #banner>
+        <LayoutBannerBase image="/imgs/proteccion-datos/proteccion-datos-header.png">
+          <h1 class="h1-banner">Protección de Datos Personales: <span class="font-weight-regular">Avisos de Privacidad Integrales</span></h1>
+        </LayoutBannerBase>
+    </template>
+
+    <div class="dp-avisos"> 
+      <h2 class="dp-avisos__title">
+        Protección de Datos Personales:
+        <span class="dp-avisos__title-subtitle">Avisos de Privacidad Integrales</span>
+      </h2>
+      
+      <div class="dp-avisos__intro">
+        <p class="dp-avisos__intro-text">
+          Hacemos de su conocimiento que eI Instituto Potosino de Investigación
+          Científica y Tecnológica, A.C., con motivo de respetar, proteger y
+          garantizar el derecho humano a la autodeterminación informativa, ha
+          desarrollado una Política de Privacidad la cual ponemos a su disposición
+          en las siguientes ligas:
+        </p>
+      </div>
+      
+      <div class="dp-avisos__buttons d-flex flex-column ga-5">
+        <div v-for="(item, index) in avisos" :key="index">
+          <ButtonLink class="dp-avisos__button justify-start align-start" :href="getDatosAvisosPath(item.file)" color="var(--color-text-subtle)">
+              {{ item.title }}
+          </ButtonLink>
+        </div>
       </div>
     </div>
-  </div>
+  </NuxtLayout>
 </template>
 
 <style scoped lang="scss">
